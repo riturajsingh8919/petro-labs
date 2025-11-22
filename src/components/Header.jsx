@@ -10,7 +10,6 @@ import { RiMenu3Fill } from "react-icons/ri";
 
 const menuData = [
   { title: "Home", href: "/" },
-  { title: "About", href: "/about" },
   {
     title: "Services",
     href: "/services",
@@ -127,6 +126,7 @@ const menuData = [
       },
     ],
   },
+  { title: "About", href: "/about" },
   { title: "Blogs", href: "/blogs" },
   { title: "Careers", href: "/careers" },
   { title: "Contact", href: "/contact" },
