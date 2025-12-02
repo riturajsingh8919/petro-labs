@@ -1,0 +1,214 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "slug": "gc-ms-training",
+      "title": "GC-MS/MS Training",
+      "shortTitle": "GC-MS/MS",
+      "subtitle": "Gas Chromatography–Mass Spectrometry",
+      "description": "In-depth knowledge of trace-level compound identification and quantification. Widely used in food, pharmaceuticals, environment, and forensic testing.",
+      "category": "Analytical Chemistry",
+      "duration": "5 Days",
+      "level": "Intermediate to Advanced",
+      "price": "Contact for Pricing",
+      "image": "/training/gc-ms.png",
+      "icon": "HiBeaker",
+      "color": "primary",
+      "modules": [
+        "Principles of Gas Chromatography and Mass Spectrometry",
+        "Sample preparation & extraction techniques",
+        "Instrument calibration & method development",
+        "Quantitative & qualitative analysis of compounds",
+        "Case studies: pesticide residues, pharma impurities, food adulterants"
+      ],
+      "outcomes": [
+        "Operate GC-MS/MS confidently",
+        "Develop validated methods for complex samples",
+        "Interpret mass spectral data for unknown compounds",
+        "Apply GC-MS/MS in routine & research labs"
+      ],
+      "targetAudience": [
+        "MSc/PhD Chemistry, Biotech, Pharma students",
+        "Food, pharma & environmental lab analysts",
+        "Professionals in R&D and QC departments"
+      ],
+      "seoTitle": "GC-MS/MS Training Course | Analytical Chemistry Training | Petrolabs",
+      "seoDescription": "Petrolabs offers hands-on GC-MS/MS training for students & professionals. Learn method development, data interpretation & applications in food, pharma & environment.",
+      "seoKeywords": "GC-MS/MS training, analytical training India, gas chromatography mass spectrometry training, pesticide residue analysis training, pharma QC training"
+    },
+    {
+      "id": 2,
+      "slug": "icp-oes-training",
+      "title": "ICP-OES Training",
+      "shortTitle": "ICP-OES",
+      "subtitle": "Inductively Coupled Plasma–Optical Emission Spectrometry",
+      "description": "Equips participants with practical knowledge of elemental and trace metal analysis in diverse matrices such as water, soil, food, alloys, and fuels.",
+      "category": "Analytical Chemistry",
+      "duration": "4 Days",
+      "level": "Beginner to Intermediate",
+      "price": "Contact for Pricing",
+      "image": "/training/icp-oes.png",
+      "icon": "HiLightBulb",
+      "color": "secondary",
+      "modules": [
+        "Basics of plasma emission spectroscopy",
+        "Sample digestion & preparation",
+        "Multi-element calibration & detection limits",
+        "Heavy metal analysis (Pb, As, Hg, Cd, Cr, etc.)",
+        "Industry applications: environment, metallurgy, food, oils"
+      ],
+      "outcomes": [
+        "Perform multi-element analysis with ICP-OES",
+        "Validate test methods as per ASTM, ISO, BIS, APHA standards",
+        "Apply ICP-OES in environmental monitoring & material testing"
+      ],
+      "targetAudience": [
+        "Environmental scientists & chemists",
+        "QC teams in food, pharma, metal industries",
+        "Analytical chemists & researchers"
+      ],
+      "seoTitle": "ICP-OES Training Course | Metal & Trace Element Analysis | Petrolabs",
+      "seoDescription": "Petrolabs provides hands-on ICP-OES training. Learn elemental analysis, sample preparation & calibration for metals in water, soil, food & alloys.",
+      "seoKeywords": "ICP-OES training, elemental analysis training, trace metal analysis, inductively coupled plasma training, BIS APHA ASTM standards training"
+    },
+    {
+      "id": 3,
+      "slug": "hplc-training",
+      "title": "HPLC Training",
+      "shortTitle": "HPLC",
+      "subtitle": "High Performance Liquid Chromatography",
+      "description": "Hands-on experience in separation, identification, and quantification of compounds used in pharma, food, and chemical industries.",
+      "category": "Analytical Chemistry",
+      "duration": "5 Days",
+      "level": "Beginner to Advanced",
+      "price": "Contact for Pricing",
+      "image": "/training/hplc.png",
+      "icon": "HiChartBar",
+      "color": "accent1",
+      "modules": [
+        "Principles of liquid chromatography",
+        "Column selection & mobile phase preparation",
+        "Gradient programming & detection methods (UV, PDA, FLD)",
+        "Method development & validation (ICH guidelines)",
+        "Troubleshooting common HPLC problems"
+      ],
+      "outcomes": [
+        "Operate HPLC systems independently",
+        "Develop validated methods for pharma & food applications",
+        "Troubleshoot retention time shifts, peak tailing & noise issues"
+      ],
+      "targetAudience": [
+        "Pharma QC & QA professionals",
+        "Food & beverage testing analysts",
+        "Chemistry & life science researchers"
+      ],
+      "seoTitle": "HPLC Training Course | Chromatography Training | Petrolabs",
+      "seoDescription": "Hands-on HPLC training by Petrolabs. Learn chromatography principles, method validation, gradient programming & troubleshooting for pharma & food analysis.",
+      "seoKeywords": "HPLC training India, chromatography training, liquid chromatography course, pharma QC training, food testing training"
+    },
+    {
+      "id": 4,
+      "slug": "aas-training",
+      "title": "AAS Training",
+      "shortTitle": "AAS",
+      "subtitle": "Atomic Absorption Spectroscopy",
+      "description": "Focuses on metal quantification techniques widely applied in water testing, food safety, pharmaceuticals, and petrochemical analysis.",
+      "category": "Analytical Chemistry",
+      "duration": "4 Days",
+      "level": "Beginner to Intermediate",
+      "price": "Contact for Pricing",
+      "image": "/training/aas.png",
+      "icon": "HiCubeTransparent",
+      "color": "accent2",
+      "modules": [
+        "Principles of Atomic Absorption Spectroscopy",
+        "Flame & Graphite Furnace AAS",
+        "Sample digestion & preparation techniques",
+        "Analysis of heavy metals (Pb, Cd, Hg, Cr, Ni, Cu, Zn)",
+        "Compliance with BIS, APHA, AOAC standards"
+      ],
+      "outcomes": [
+        "Perform elemental analysis using AAS",
+        "Differentiate flame vs. graphite furnace techniques",
+        "Apply AAS in environmental & industrial testing"
+      ],
+      "targetAudience": [
+        "Water & environmental labs",
+        "Food QC analysts",
+        "Pharma & chemical industries"
+      ],
+      "seoTitle": "AAS Training Course | Atomic Absorption Spectroscopy | Petrolabs",
+      "seoDescription": "Petrolabs offers AAS training with hands-on practice in elemental analysis. Learn heavy metal detection in food, water, pharma & petrochemicals.",
+      "seoKeywords": "AAS training, atomic absorption spectroscopy training, heavy metal analysis training, water testing training, food QC training"
+    },
+    {
+      "id": 5,
+      "slug": "gc-training",
+      "title": "GC Training",
+      "shortTitle": "GC",
+      "subtitle": "Gas Chromatography",
+      "description": "Introduction to Gas Chromatography (GC) for analysis of volatile and semi-volatile organic compounds.",
+      "category": "Analytical Chemistry",
+      "duration": "3 Days",
+      "level": "Beginner to Intermediate",
+      "price": "Contact for Pricing",
+      "image": "/training/gc.png",
+      "icon": "HiFire",
+      "color": "primary",
+      "modules": [
+        "Principles of gas chromatography",
+        "Detectors: FID, ECD, TCD",
+        "Column selection & carrier gases",
+        "Sample injection techniques",
+        "Applications: petrochemicals, flavors, fragrances, environmental pollutants"
+      ],
+      "outcomes": [
+        "Operate GC systems confidently",
+        "Select detectors for specific applications",
+        "Analyze volatile organics in environmental & industrial samples"
+      ],
+      "targetAudience": [
+        "Petrochemical & refinery professionals",
+        "Food & flavor testing analysts",
+        "Environmental monitoring labs"
+      ],
+      "seoTitle": "GC Training Course | Gas Chromatography Training | Petrolabs",
+      "seoDescription": "Petrolabs offers Gas Chromatography (GC) training with hands-on practice. Learn column selection, detectors, and applications in food, petrochemicals & environment.",
+      "seoKeywords": "GC training India, gas chromatography training, volatile compound analysis, petrochemical testing training, flavor testing training"
+    },
+    {
+      "id": 6,
+      "slug": "chemistry",
+      "title": "Chemistry Training",
+      "shortTitle": "Chemistry",
+      "subtitle": "Analytical, Organic & Industrial Chemistry",
+      "description": "Practical exposure to laboratory techniques and industrial applications across analytical, organic, and industrial chemistry.",
+      "category": "Analytical Chemistry",
+      "duration": "6 Days",
+      "level": "Beginner to Advanced",
+      "price": "Contact for Pricing",
+      "image": "/training/chemistry.png",
+      "icon": "HiCommandLine",
+      "color": "secondary",
+      "modules": [
+        "Analytical Chemistry: Titrations, spectroscopy, chromatography",
+        "Organic Chemistry: Synthesis, separation, characterization",
+        "Industrial Chemistry: Fertilizers, polymers, fine chemicals",
+        "Safety, calibration & GLP (Good Laboratory Practices)"
+      ],
+      "outcomes": [
+        "Gain hands-on skills in analytical & organic chemistry",
+        "Learn industrial chemical processes & safety standards",
+        "Prepare for roles in R&D, QC, and production"
+      ],
+      "targetAudience": [
+        "BSc/MSc Chemistry students",
+        "R&D chemists",
+        "Industrial lab professionals"
+      ],
+      "seoTitle": "Chemistry Training Programs | Analytical, Organic & Industrial | Petrolabs",
+      "seoDescription": "Petrolabs offers Chemistry training in analytical, organic & industrial fields. Hands-on exposure to spectroscopy, chromatography & chemical process labs.",
+      "seoKeywords": "analytical chemistry training, organic chemistry training, industrial chemistry training, laboratory skills training, GLP training"
+    }
+  ]
+}

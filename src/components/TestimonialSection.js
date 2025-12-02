@@ -171,7 +171,7 @@ const TestimonialSection = () => {
                       fill
                       className="object-cover"
                       priority
-                      quality={95}
+                      quality={100}
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
 

@@ -4,12 +4,11 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { HiX, HiChevronDown } from "react-icons/hi";
 import { RiMenu3Fill } from "react-icons/ri";
 
 const menuData = [
-  { title: "Home", href: "/" },
   {
     title: "Services",
     href: "/services",
@@ -45,7 +44,7 @@ const menuData = [
   },
   {
     title: "Products",
-    href: "/products",
+    href: "#",
     submenu: [
       {
         title: "Spectro Scientific USA",
@@ -126,10 +125,17 @@ const menuData = [
       },
     ],
   },
-  { title: "About", href: "/about" },
+  { title: "Training Academy", href: "/training-academy" },
+  {
+    title: "About",
+    href: "#",
+    submenu: [
+      { title: "About Us", href: "/about-us" },
+      { title: "Contact Us", href: "/contact-us" },
+    ],
+  },
   { title: "Blogs", href: "/blogs" },
   { title: "Careers", href: "/careers" },
-  { title: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
@@ -140,19 +146,17 @@ export default function Header() {
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState(null);
   const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Show header when at the top
       if (currentScrollY < 50) {
         setIsVisible(true);
       } else if (currentScrollY > lastScrollY) {
-        // Scrolling down - hide header
         setIsVisible(false);
       } else {
-        // Scrolling up - show header
         setIsVisible(true);
       }
 
@@ -175,7 +179,14 @@ export default function Header() {
   const isActive = (href) =>
     pathname === href || pathname.startsWith(href + "/");
 
-  // Stagger animation for submenu items
+  const handleParentClick = (e, href) => {
+    if (href && href !== "#") {
+      e.stopPropagation();
+      setOpenDropdown(null);
+      router.push(href);
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -246,15 +257,37 @@ export default function Header() {
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
                   {item.submenu || item.megaMenu ? (
-                    <>
-                      <button
-                        className={`relative group px-5 py-2.5 text-base font-body font-semibold transition-all duration-300 cursor-pointer ${
+                    <div className="relative group">
+                      <Link
+                        href={item.href}
+                        onClick={(e) => handleParentClick(e, item.href)}
+                        className={`relative group px-5 py-2.5 text-base font-body font-semibold transition-all duration-300 cursor-pointer flex items-center gap-2 ${
                           isActive(item.href)
                             ? "text-accent1"
                             : "text-gray-800 hover:text-primary"
                         }`}
                       >
-                        {item.title}
+                        <span>{item.title}</span>
+
+                        <motion.span
+                          animate={{
+                            rotate: openDropdown === item.title ? 180 : 0,
+                          }}
+                          transition={{
+                            duration: 0.3,
+                            ease: [0.4, 0, 0.2, 1],
+                          }}
+                          className="inline-flex"
+                        >
+                          <HiChevronDown
+                            className={`w-4 h-4 transition-colors duration-300 ${
+                              openDropdown === item.title
+                                ? "text-primary"
+                                : "text-gray-500 group-hover:text-primary"
+                            }`}
+                          />
+                        </motion.span>
+
                         <motion.span
                           className="absolute bottom-1 left-5 right-5 h-0.5 bg-linear-to-r from-primary via-accent1 to-primary rounded-full"
                           initial={{ scaleX: 0 }}
@@ -262,7 +295,7 @@ export default function Header() {
                           transition={{ duration: 0.3 }}
                         />
                         <span className="absolute bottom-1 left-5 right-5 h-0.5 bg-linear-to-r from-primary via-accent1 to-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center rounded-full" />
-                      </button>
+                      </Link>
 
                       <AnimatePresence>
                         {openDropdown === item.title && (
@@ -345,7 +378,7 @@ export default function Header() {
                           </motion.div>
                         )}
                       </AnimatePresence>
-                    </>
+                    </div>
                   ) : (
                     <Link
                       href={item.href}
@@ -407,7 +440,7 @@ export default function Header() {
         </div>
       </motion.header>
 
-      {/* Full-Screen Mobile Menu Overlay */}
+      {/* Mobile Menu - Keep as is */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -454,13 +487,24 @@ export default function Header() {
                           >
                             {item.title}
                           </motion.span>
-                          <HiChevronDown
-                            className={`w-10 h-10 text-white transition-transform duration-300 ${
-                              openMobileSubmenu === item.title
-                                ? "rotate-180 text-accent1"
-                                : ""
-                            }`}
-                          />
+                          <motion.span
+                            animate={{
+                              rotate:
+                                openMobileSubmenu === item.title ? 180 : 0,
+                            }}
+                            transition={{
+                              duration: 0.4,
+                              ease: [0.4, 0, 0.2, 1],
+                            }}
+                          >
+                            <HiChevronDown
+                              className={`w-10 h-10 transition-colors duration-300 ${
+                                openMobileSubmenu === item.title
+                                  ? "text-accent1"
+                                  : "text-white group-hover:text-accent1"
+                              }`}
+                            />
+                          </motion.span>
                         </button>
 
                         <AnimatePresence>

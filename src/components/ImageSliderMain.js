@@ -14,9 +14,9 @@ export default function Home() {
     {
       id: 1,
       images: [
-        { src: "/slide1.png", alt: "Laboratory testing" },
-        { src: "/slide2.png", alt: "Quality analysis" },
-        { src: "/slide3.png", alt: "Professional equipment" },
+        { src: "/slide-1-a.png", alt: "Laboratory testing" },
+        { src: "/slide-1-b.png", alt: "Quality analysis" },
+        { src: "/slide-1-c.png", alt: "Professional equipment" },
       ],
       content: [
         {
@@ -45,9 +45,9 @@ export default function Home() {
     {
       id: 2,
       images: [
-        { src: "/slide2.png", alt: "Certification process" },
-        { src: "/slide3.png", alt: "Testing facility" },
-        { src: "/slide1.png", alt: "Quality control" },
+        { src: "/slide-2-a.png", alt: "Certification process" },
+        { src: "/slide-2-b.png", alt: "Testing facility" },
+        { src: "/slide-2-c.png", alt: "Quality control" },
       ],
       content: [
         {
@@ -76,9 +76,9 @@ export default function Home() {
     {
       id: 3,
       images: [
-        { src: "/slide3.png", alt: "Environmental testing" },
-        { src: "/slide1.png", alt: "Food analysis" },
-        { src: "/slide2.png", alt: "Metallography lab" },
+        { src: "/slide-3-a.png", alt: "Environmental testing" },
+        { src: "/slide-3-b.png", alt: "Food analysis" },
+        { src: "/slide-3-c.png", alt: "Metallography lab" },
       ],
       content: [
         {

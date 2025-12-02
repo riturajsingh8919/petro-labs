@@ -16,12 +16,13 @@ const loadFeatures = () =>
 const Footer = () => {
   const quickLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
+    { name: "About Us", href: "/about-us" },
     { name: "Services", href: "/services" },
     { name: "Training", href: "/training" },
-    { name: "Blog", href: "/blog" },
+    { name: "Training Academy", href: "/training-academy" },
+    { name: "Blogs", href: "/blogs" },
     { name: "Careers", href: "/careers" },
-    { name: "Contact", href: "/contact" },
+    { name: "Contact", href: "/contact-us" },
   ];
 
   const services = [
@@ -37,7 +38,7 @@ const Footer = () => {
     { name: "Coolant & DEF Testing", href: "/services/coolant-def-testing" },
     {
       name: "RoHS & ELC Certification",
-      href: "/services/rohs-elc-certification",
+      href: "/services/rohs-elc-testing",
     },
     {
       name: "Chemical & Mechanical Testing",
