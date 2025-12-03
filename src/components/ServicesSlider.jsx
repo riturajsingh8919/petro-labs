@@ -33,54 +33,63 @@ const ServicesSlider = () => {
       title: "Petroleum Products & Lubricant Testing",
       image: "/services/1.jpg",
       icon: MdOutlineOilBarrel,
+      href: "/services/petroleum-lubricant-testing",
     },
     {
       id: 2,
       title: "Transformer Oil Testing",
       image: "/services/2.jpg",
       icon: MdOutlineElectricalServices,
+      href: "/services/transformer-oil-testing",
     },
     {
       id: 3,
       title: "Water Testing Services",
       image: "/services/3.jpg",
       icon: FiDroplet,
+      href: "/services/water-testing",
     },
     {
       id: 4,
       title: "Coolant and DEF Testing",
       image: "/services/4.jpg",
       icon: MdOutlineScience,
+      href: "/services/coolant-def-testing",
     },
     {
       id: 5,
       title: "RoHS and ELC Certification Testing",
       image: "/services/5.jpg",
       icon: MdOutlineBiotech,
+      href: "/services/rohs-elc-testing",
     },
     {
       id: 6,
       title: "Chemical, Mechanical Testing",
       image: "/services/6.jpg",
       icon: MdOutlineFactory,
+      href: "/services/chemical-mechanical-testing",
     },
     {
       id: 7,
       title: "Metallography Testing",
       image: "/services/7.jpg",
       icon: MdOutlinePrecisionManufacturing,
+      href: "/services/metallography-testing",
     },
     {
       id: 8,
       title: "Food and Agriculture Product Testing",
       image: "/services/8.jpg",
       icon: MdOutlineRestaurant,
+      href: "/services/food-agriculture-testing",
     },
     {
       id: 9,
       title: "Environmental Testing",
       image: "/services/9.jpg",
       icon: MdOutlineEco,
+      href: "/services/environmental-testing",
     },
   ];
 
@@ -250,7 +259,7 @@ const ServicesSlider = () => {
                       {/* Card Content */}
                       <div className="relative h-full flex flex-col justify-between p-6 sm:p-7 md:p-8 lg:p-9">
                         {/* Top - External Link Icon */}
-                        <Link href={"#"} className="flex justify-end">
+                        <Link href={service.href} className="flex justify-end">
                           <motion.div
                             whileHover={{ scale: 1.12, rotate: 45 }}
                             transition={{

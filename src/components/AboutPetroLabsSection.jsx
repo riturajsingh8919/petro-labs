@@ -311,7 +311,7 @@ const AboutPetroLabsSection = () => {
 
             {/* CTA - Bold 3D Button */}
             <motion.div variants={itemVariants}>
-              <Link href="/about">
+              <Link href="/about-us">
                 <motion.button
                   className="relative px-12 py-5 rounded-2xl font-bold text-white text-lg overflow-hidden group shadow-xl cursor-pointer"
                   style={{

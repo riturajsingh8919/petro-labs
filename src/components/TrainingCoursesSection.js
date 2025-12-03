@@ -18,6 +18,7 @@ import {
   HiChartBar,
 } from "react-icons/hi";
 import { SlChemistry } from "react-icons/sl";
+import Link from "next/link";
 
 const loadFeatures = () =>
   import("framer-motion").then((res) => res.domAnimation);
@@ -36,6 +37,7 @@ const TrainingCoursesSection = () => {
             "Master gas chromatography-mass spectrometry techniques for complex sample analysis and compound identification.",
           icon: MdScience,
           color: "primary",
+          href: "/training/gc-ms-training",
         },
         {
           name: "ICP-OES Training",
@@ -43,6 +45,7 @@ const TrainingCoursesSection = () => {
             "Learn inductively coupled plasma optical emission spectroscopy for precise elemental analysis.",
           icon: MdBiotech,
           color: "accent1",
+          href: "/training/icp-oes-training",
         },
         {
           name: "HPLC Training",
@@ -50,6 +53,7 @@ const TrainingCoursesSection = () => {
             "Develop expertise in high-performance liquid chromatography for pharmaceutical and chemical analysis.",
           icon: MdWaterDrop,
           color: "accent2",
+          href: "/training/hplc-training",
         },
         {
           name: "AAS Training",
@@ -57,6 +61,7 @@ const TrainingCoursesSection = () => {
             "Acquire skills in atomic absorption spectroscopy for trace metal detection and quantification.",
           icon: MdAnalytics,
           color: "secondary",
+          href: "/training/aas-training",
         },
         {
           name: "GC Training",
@@ -64,6 +69,7 @@ const TrainingCoursesSection = () => {
             "Understand gas chromatography fundamentals and advanced separation techniques for volatile compounds.",
           icon: HiBeaker,
           color: "primary",
+          href: "/training/gc-training",
         },
         {
           name: "Chemistry (Analytical / Organic / Industrial)",
@@ -71,6 +77,7 @@ const TrainingCoursesSection = () => {
             "Comprehensive chemistry training covering analytical methods, organic synthesis, and industrial applications.",
           icon: SlChemistry,
           color: "accent1",
+          href: "/training/chemistry",
         },
       ],
     },
@@ -84,6 +91,7 @@ const TrainingCoursesSection = () => {
             "Learn advanced oil condition monitoring and wear particle analysis for predictive maintenance strategies.",
           icon: MdPrecisionManufacturing,
           color: "primary",
+          href: "/training/oil-analysis-ferrography",
         },
         {
           name: "Condition-Based Maintenance Training",
@@ -91,6 +99,7 @@ const TrainingCoursesSection = () => {
             "Implement data-driven maintenance programs to optimize equipment reliability and reduce downtime.",
           icon: HiCog,
           color: "accent1",
+          href: "/training/condition-based-maintenance",
         },
         {
           name: "Machinery Lubrication I (MLT I / MLA I)",
@@ -98,6 +107,7 @@ const TrainingCoursesSection = () => {
             "Foundation course covering lubrication fundamentals, lubricant selection, and basic machine maintenance.",
           icon: HiLightningBolt,
           color: "accent2",
+          href: "/training/machinery-lubrication-1",
         },
         {
           name: "Machinery Lubrication II (MLT II)",
@@ -105,6 +115,7 @@ const TrainingCoursesSection = () => {
             "Advanced lubrication practices including contamination control and lubricant storage best practices.",
           icon: HiShieldCheck,
           color: "secondary",
+          href: "/training/machinery-lubrication-2",
         },
         {
           name: "Machinery Lubrication Engineer (MLE)",
@@ -112,6 +123,7 @@ const TrainingCoursesSection = () => {
             "Professional certification for developing lubrication programs and managing reliability engineering teams.",
           icon: HiAcademicCap,
           color: "primary",
+          href: "/training/mle",
         },
         {
           name: "Machine Lubricant Analyst II (MLA II)",
@@ -119,6 +131,7 @@ const TrainingCoursesSection = () => {
             "Intermediate-level training in fluid analysis, interpreting test results, and diagnostic techniques.",
           icon: HiChartBar,
           color: "accent1",
+          href: "/training/mla-2",
         },
         {
           name: "Machine Lubricant Analyst III (MLA III)",
@@ -126,6 +139,7 @@ const TrainingCoursesSection = () => {
             "Expert-level certification covering advanced diagnostics, root cause analysis, and consulting skills.",
           icon: HiChartBar,
           color: "accent2",
+          href: "/training/mla-3",
         },
       ],
     },
@@ -421,8 +435,12 @@ const TrainingCoursesSection = () => {
                           />
 
                           {/* Icon - Only One */}
+
                           <m.div
-                            whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                            whileHover={{
+                              rotate: [0, -10, 10, 0],
+                              scale: 1.1,
+                            }}
                             transition={{ duration: 0.5 }}
                             className={`inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 ${colors.icon} rounded-xl shadow-lg mb-4`}
                           >
@@ -440,25 +458,27 @@ const TrainingCoursesSection = () => {
                           </p>
 
                           {/* Hover Arrow */}
-                          <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-                            <div
-                              className={`w-8 h-8 ${colors.icon} rounded-lg flex items-center justify-center shadow-md`}
-                            >
-                              <svg
-                                className="w-4 h-4 text-white"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
+                          <Link href={course.href}>
+                            <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+                              <div
+                                className={`w-8 h-8 ${colors.icon} rounded-lg flex items-center justify-center shadow-md`}
                               >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2.5}
-                                  d="M9 5l7 7-7 7"
-                                />
-                              </svg>
+                                <svg
+                                  className="w-4 h-4 text-white"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2.5}
+                                    d="M9 5l7 7-7 7"
+                                  />
+                                </svg>
+                              </div>
                             </div>
-                          </div>
+                          </Link>
                         </div>
                       </m.div>
                     );
@@ -466,36 +486,38 @@ const TrainingCoursesSection = () => {
                 </div>
 
                 {/* CTA Button */}
-                <m.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5, duration: 0.6 }}
-                  className="flex justify-center mt-10 md:mt-12"
-                >
-                  <m.button
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="group relative px-8 py-4 bg-linear-to-r from-primary via-primary/95 to-primary rounded-xl font-bold text-white shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden cursor-pointer"
+                <Link href="/training">
+                  <m.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5, duration: 0.6 }}
+                    className="flex justify-center mt-10 md:mt-12"
                   >
-                    <div className="absolute inset-0 bg-linear-to-r from-accent1 via-accent1/95 to-accent1 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <span className="relative flex items-center gap-2">
-                      View All Training Programs
-                      <svg
-                        className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2.5}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
-                    </span>
-                  </m.button>
-                </m.div>
+                    <m.button
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="group relative px-8 py-4 bg-linear-to-r from-primary via-primary/95 to-primary rounded-xl font-bold text-white shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden cursor-pointer"
+                    >
+                      <div className="absolute inset-0 bg-linear-to-r from-accent1 via-accent1/95 to-accent1 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <span className="relative flex items-center gap-2">
+                        View All Training Programs
+                        <svg
+                          className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2.5}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                      </span>
+                    </m.button>
+                  </m.div>
+                </Link>
               </m.div>
             </AnimatePresence>
           </div>
