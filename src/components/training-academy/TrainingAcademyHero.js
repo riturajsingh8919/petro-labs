@@ -23,18 +23,9 @@ export default function TrainingAcademyHero() {
   return (
     <LazyMotion features={loadFeatures} strict>
       <div className="h-20"></div>
-      <section className="relative bg-linear-to-br from-primary/70 via-primary to-primary/50 overflow-hidden">
+      <section className="relative bg-[url('/training/1.png')] bg-no-repeat bg-cover bg-center overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
-              backgroundSize: "40px 40px",
-            }}
-          />
-        </div>
+        <div className="absolute inset-0 bg-primary opacity-80"></div>
 
         <div className="relative z-10 container mx-auto px-6 md:px-10 py-16">
           <m.div

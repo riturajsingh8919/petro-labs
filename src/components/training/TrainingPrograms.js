@@ -63,11 +63,11 @@ export default function TrainingPrograms() {
       hover: "hover:bg-primary hover:text-white",
     },
     secondary: {
-      bg: "bg-secondary",
-      light: "bg-secondary/10",
-      text: "text-secondary",
-      border: "border-secondary",
-      hover: "hover:bg-secondary hover:text-white",
+      bg: "bg-accent2",
+      light: "bg-accent2/10",
+      text: "text-accent2",
+      border: "border-accent2",
+      hover: "hover:bg-accent2 hover:text-white",
     },
   };
 
