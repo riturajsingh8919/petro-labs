@@ -230,7 +230,7 @@ export default function Header() {
                 }}
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative w-32 h-12 lg:w-40 lg:h-14"
+                className="relative w-32 h-12 lg:w-56 lg:h-16"
               >
                 <Image
                   src="/logo1.png"
