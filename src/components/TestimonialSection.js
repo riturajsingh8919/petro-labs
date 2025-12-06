@@ -330,7 +330,7 @@ const TestimonialSection = () => {
             className="flex flex-wrap justify-center items-center gap-8 md:gap-12 mt-12 md:mt-16"
           >
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-linear-to-r from-primary to-accent1 bg-clip-text text-transparent mb-2">
+              <div className="text-3xl  font-bold bg-linear-to-r from-primary to-accent1 bg-clip-text text-transparent mb-2">
                 500+
               </div>
               <div className="text-sm md:text-base text-gray-600 font-medium">
@@ -341,7 +341,7 @@ const TestimonialSection = () => {
             <div className="hidden sm:block w-px h-12 bg-gray-300" />
 
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-linear-to-r from-accent1 to-secondary bg-clip-text text-transparent mb-2">
+              <div className="text-3xl  font-bold bg-linear-to-r from-accent1 to-secondary bg-clip-text text-transparent mb-2">
                 98%
               </div>
               <div className="text-sm md:text-base text-gray-600 font-medium">
@@ -352,7 +352,7 @@ const TestimonialSection = () => {
             <div className="hidden sm:block w-px h-12 bg-gray-300" />
 
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-linear-to-r from-secondary to-primary bg-clip-text text-transparent mb-2">
+              <div className="text-3xl  font-bold bg-linear-to-r from-secondary to-primary bg-clip-text text-transparent mb-2">
                 15+
               </div>
               <div className="text-sm md:text-base text-gray-600 font-medium">

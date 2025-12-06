@@ -50,7 +50,7 @@ const AboutStory = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: 0.2 }}
-                  className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8"
+                  className="text-xl  text-gray-700 leading-relaxed mb-8"
                 >
                   At{" "}
                   <span className="font-bold text-gray-900">

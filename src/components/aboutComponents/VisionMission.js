@@ -133,7 +133,7 @@ const VisionMission = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="text-3xl md:text-4xl font-black leading-tight mb-6 text-gray-900 relative z-10"
+                  className="text-3xl  font-black leading-tight mb-6 text-gray-900 relative z-10"
                 >
                   Our <span className="text-primary">Vision</span>
                 </m.h3>
@@ -222,7 +222,7 @@ const VisionMission = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="text-3xl md:text-4xl font-black leading-tight mb-6 text-white relative z-10"
+                  className="text-3xl  font-black leading-tight mb-6 text-white relative z-10"
                 >
                   Our <span className="text-accent1">Mission</span>
                 </m.h3>

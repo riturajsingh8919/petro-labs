@@ -87,8 +87,8 @@ const menuData = [
     ],
   },
   {
-    title: "Training",
-    href: "/training",
+    title: "Training Academy",
+    href: "/training-academy",
     megaMenu: true,
     columns: [
       {
@@ -128,7 +128,6 @@ const menuData = [
       },
     ],
   },
-  { title: "Training Academy", href: "/training-academy" },
   {
     title: "About",
     href: "#",
@@ -147,6 +146,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState(null);
+  const [openMobileCategory, setOpenMobileCategory] = useState(null);
   const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname();
   const router = useRouter();
@@ -217,7 +217,7 @@ export default function Header() {
         }`}
       >
         <div className="container mx-auto px-4 md:px-10 lg:px-16">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-22 ">
             {/* Logo */}
             <Link href="/" className="relative z-50">
               <motion.div
@@ -228,16 +228,16 @@ export default function Header() {
                   delay: 0.2,
                   ease: [0.43, 0.13, 0.23, 0.96],
                 }}
-                whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
                 className="relative w-32 h-12 lg:w-56 lg:h-16"
               >
                 <Image
                   src="/logo1.png"
                   alt="PetroLabs"
-                  fill
+                  width={4144}
+                  height={1292}
+                  quality={100}
                   className="object-contain"
-                  priority
                 />
               </motion.div>
             </Link>
@@ -443,7 +443,7 @@ export default function Header() {
         </div>
       </motion.header>
 
-      {/* Mobile Menu - Keep as is */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -477,17 +477,13 @@ export default function Header() {
                                 : item.title
                             )
                           }
-                          className={`group flex items-center justify-between w-full text-left text-5xl md:text-6xl font-heading font-bold transition-all duration-300 ${
+                          className={`group flex items-center justify-between w-full text-left text-4xl md:text-4xl font-heading font-bold transition-all duration-300 ${
                             isActive(item.href)
                               ? "text-transparent bg-clip-text bg-linear-to-r from-accent1 to-primary"
                               : "text-white hover:text-transparent hover:bg-clip-text hover:bg-linear-to-r hover:from-accent1 hover:to-primary"
                           }`}
                         >
-                          <motion.span
-                            className="inline-block"
-                            whileHover={{ x: 20 }}
-                            transition={{ type: "spring", stiffness: 300 }}
-                          >
+                          <motion.span className="inline-block">
                             {item.title}
                           </motion.span>
                           <motion.span
@@ -522,22 +518,70 @@ export default function Header() {
                               {item.megaMenu ? (
                                 <div className="space-y-6">
                                   {item.columns.map((column, colIdx) => (
-                                    <div key={colIdx} className="space-y-2">
-                                      <h3 className="text-sm font-heading font-bold text-primary uppercase tracking-widest mb-3">
-                                        {column.category}
-                                      </h3>
-                                      {column.items.map((subItem, subIdx) => (
-                                        <Link
-                                          key={subIdx}
-                                          href={subItem.href}
-                                          onClick={() =>
-                                            setIsMobileMenuOpen(false)
-                                          }
-                                          className="block text-lg text-gray-400 hover:text-accent1 transition-colors duration-200 py-1"
+                                    <div key={colIdx}>
+                                      <button
+                                        onClick={() =>
+                                          setOpenMobileCategory(
+                                            openMobileCategory ===
+                                              column.category
+                                              ? null
+                                              : column.category
+                                          )
+                                        }
+                                        className="flex items-center justify-between w-full text-sm font-heading font-bold text-primary uppercase tracking-widest mb-3"
+                                      >
+                                        <span>{column.category}</span>
+                                        <motion.span
+                                          animate={{
+                                            rotate:
+                                              openMobileCategory ===
+                                              column.category
+                                                ? 180
+                                                : 0,
+                                          }}
+                                          transition={{ duration: 0.3 }}
                                         >
-                                          {subItem.title}
-                                        </Link>
-                                      ))}
+                                          <HiChevronDown
+                                            className={`w-5 h-5 ${
+                                              openMobileCategory ===
+                                              column.category
+                                                ? "text-accent1"
+                                                : "text-primary"
+                                            }`}
+                                          />
+                                        </motion.span>
+                                      </button>
+
+                                      <AnimatePresence>
+                                        {openMobileCategory ===
+                                          column.category && (
+                                          <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{
+                                              opacity: 1,
+                                              height: "auto",
+                                            }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            transition={{ duration: 0.3 }}
+                                            className="overflow-hidden space-y-2 ml-4"
+                                          >
+                                            {column.items.map(
+                                              (subItem, subIdx) => (
+                                                <Link
+                                                  key={subIdx}
+                                                  href={subItem.href}
+                                                  onClick={() =>
+                                                    setIsMobileMenuOpen(false)
+                                                  }
+                                                  className="block text-base text-gray-400 hover:text-accent1 transition-colors duration-200 py-1"
+                                                >
+                                                  {subItem.title}
+                                                </Link>
+                                              )
+                                            )}
+                                          </motion.div>
+                                        )}
+                                      </AnimatePresence>
                                     </div>
                                   ))}
                                 </div>
@@ -566,17 +610,13 @@ export default function Header() {
                       <Link
                         href={item.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`group block text-5xl md:text-6xl font-heading font-bold transition-all duration-300 ${
+                        className={`group block text-4xl md:text-4xl font-heading font-bold transition-all duration-300 ${
                           isActive(item.href)
                             ? "text-transparent bg-clip-text bg-linear-to-r from-accent1 to-primary"
                             : "text-white hover:text-transparent hover:bg-clip-text hover:bg-linear-to-r hover:from-accent1 hover:to-primary"
                         }`}
                       >
-                        <motion.span
-                          className="inline-block"
-                          whileHover={{ x: 20 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
+                        <motion.span className="inline-block">
                           {item.title}
                         </motion.span>
                       </Link>

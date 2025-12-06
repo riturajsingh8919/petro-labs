@@ -151,7 +151,7 @@ export default function BlogPost({ params }) {
                 transition={{ delay: 0.2 }}
               >
                 {/* Title */}
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+                <h1 className="text-3xl  lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
                   {blog.title}
                 </h1>
 

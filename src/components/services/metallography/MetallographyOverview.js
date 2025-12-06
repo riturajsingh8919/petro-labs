@@ -35,7 +35,7 @@ export default function MetallographyOverview() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
+            <h2 className="text-3xl  font-black text-gray-900 mb-4">
               Expert Metallographic Analysis
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4 text-lg">

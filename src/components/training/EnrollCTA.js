@@ -32,9 +32,7 @@ export default function EnrollCTA() {
             <div className="relative z-10 p-8 md:p-12">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-black mb-4">
-                    Enroll Today
-                  </h2>
+                  <h2 className="text-3xl  font-black mb-4">Enroll Today</h2>
                   <p className="text-white/90 text-lg mb-6 leading-relaxed">
                     Accelerate your career with Petrolabs Training Academy. Join
                     our upcoming training sessions and gain industry-recognized

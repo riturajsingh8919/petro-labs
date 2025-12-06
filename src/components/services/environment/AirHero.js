@@ -42,10 +42,10 @@ export default function AirHero() {
                     </span>
                   </div>
                 </div>
-                <h1 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+                <h1 className="text-3xl  font-black text-white mb-4 leading-tight">
                   Air Quality Testing Services
                 </h1>
-                <p className="text-xl md:text-2xl text-white/90 max-w-3xl">
+                <p className="text-xl text-white/90 max-w-3xl">
                   Ambient & Indoor Air Quality Monitoring for Healthier
                   Environments
                 </p>

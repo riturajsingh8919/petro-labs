@@ -32,7 +32,7 @@ export default function PetroleumHero() {
                     NABL Accredited
                   </span>
                 </div>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
+                <h1 className="text-3xl  lg:text-5xl font-black text-white mb-4 leading-tight">
                   Petroleum Products & Lubricants Testing Services
                 </h1>
                 <p className="text-xl text-white/90 max-w-2xl">

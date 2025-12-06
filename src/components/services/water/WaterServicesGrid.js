@@ -301,7 +301,7 @@ export default function WaterServicesGrid() {
                   <ServiceIcon className="w-10 h-10" />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-3xl md:text-4xl font-black mb-3">
+                  <h2 className="text-3xl  font-black mb-3">
                     {currentService.title}
                   </h2>
                   <p className="text-xl text-white/90 mb-4 font-semibold">
@@ -538,7 +538,7 @@ export default function WaterServicesGrid() {
             {/* CTA Card */}
             <div className="bg-gray-900 text-white rounded-3xl p-8 md:p-12">
               <div className="text-center mb-8">
-                <h3 className="text-3xl md:text-4xl font-black mb-4">
+                <h3 className="text-3xl  font-black mb-4">
                   {currentService.cta}
                 </h3>
                 <p className="text-white/80 text-lg">

@@ -50,7 +50,7 @@ export default function MetallographyCTA() {
                     </span>
                   </div>
 
-                  <h2 className="text-3xl md:text-4xl font-black mb-4 leading-tight">
+                  <h2 className="text-3xl  font-black mb-4 leading-tight">
                     Ensure Material{" "}
                     <span className="text-primary">Reliability</span>
                   </h2>

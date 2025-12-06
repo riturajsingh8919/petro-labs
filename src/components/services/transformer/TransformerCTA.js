@@ -50,7 +50,7 @@ export default function TransformerCTA() {
                     </span>
                   </div>
 
-                  <h2 className="text-3xl md:text-4xl font-black mb-4 leading-tight">
+                  <h2 className="text-3xl  font-black mb-4 leading-tight">
                     Ensure Transformer{" "}
                     <span className="text-primary">Safety & Reliability</span>
                   </h2>

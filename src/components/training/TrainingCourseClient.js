@@ -163,7 +163,7 @@ export default function TrainingCourseClient({ courseData, allCourses }) {
                     </span>
                   </div>
 
-                  <h1 className="text-3xl md:text-4xl font-black text-white leading-tight">
+                  <h1 className="text-3xl  font-black text-white leading-tight">
                     {courseData.title}
                   </h1>
 
@@ -250,7 +250,7 @@ export default function TrainingCourseClient({ courseData, allCourses }) {
                 viewport={{ once: true }}
                 className="text-center mb-8"
               >
-                <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-2">
+                <h2 className="text-3xl  font-black text-gray-900 mb-2">
                   Course Curriculum
                 </h2>
                 <p className="text-gray-600">

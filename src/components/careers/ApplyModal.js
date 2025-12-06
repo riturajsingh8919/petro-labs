@@ -92,7 +92,7 @@ export default function ApplyModal({ isOpen, onClose, job }) {
                   {/* Header */}
                   <div className="flex items-start justify-between p-6 border-b border-gray-100 shrink-0">
                     <div className="flex-1 pr-4">
-                      <h3 className="text-xl md:text-2xl font-black text-gray-900 wrap-break-word">
+                      <h3 className="text-xl  font-black text-gray-900 wrap-break-word">
                         Apply for {job.title}
                       </h3>
                       <p className="text-gray-600 mt-1 text-sm">

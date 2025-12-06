@@ -62,7 +62,7 @@ export default function FAQSection() {
               <HiQuestionMarkCircle className="w-5 h-5 text-primary" />
               <span className="text-primary font-bold text-sm">FAQs</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
+            <h2 className="text-3xl  font-black text-gray-900 mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-gray-600 text-lg">

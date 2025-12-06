@@ -50,7 +50,7 @@ export default function CoolantCTA() {
                     </span>
                   </div>
 
-                  <h2 className="text-3xl md:text-4xl font-black mb-4 leading-tight">
+                  <h2 className="text-3xl font-black mb-4 leading-tight">
                     Get Your Coolant & DEF{" "}
                     <span className="text-primary">Tested Today</span>
                   </h2>

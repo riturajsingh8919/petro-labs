@@ -50,7 +50,7 @@ export default function MechanicalCTA() {
                     </span>
                   </div>
 
-                  <h2 className="text-3xl md:text-4xl font-black mb-4 leading-tight">
+                  <h2 className="text-3xl font-black mb-4 leading-tight">
                     Ensure Quality &{" "}
                     <span className="text-primary">Compliance</span>
                   </h2>

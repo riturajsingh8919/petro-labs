@@ -109,7 +109,7 @@ const BlogSection = () => {
                       {BLOG_POSTS[0].category}
                     </span>
 
-                    <h3 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+                    <h3 className="text-3xl md:text-4xl font-black text-white mb-4 leading-tight">
                       {BLOG_POSTS[0].title}
                     </h3>
 

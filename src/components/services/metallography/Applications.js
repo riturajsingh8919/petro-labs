@@ -74,7 +74,7 @@ export default function Applications() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-black mb-4">
+            <h2 className="text-3xl  font-black mb-4">
               Applications of Metallography
             </h2>
             <p className="text-white/90 text-lg max-w-3xl mx-auto">

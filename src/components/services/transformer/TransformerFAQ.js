@@ -57,7 +57,7 @@ export default function TransformerFAQ() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-black text-gray-900 mb-3"
+            className="text-3xl  font-black text-gray-900 mb-3"
           >
             Frequently Asked Questions
           </m.h2>

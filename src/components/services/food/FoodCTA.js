@@ -50,7 +50,7 @@ export default function FoodCTA() {
                     </span>
                   </div>
 
-                  <h2 className="text-3xl md:text-4xl font-black mb-4 leading-tight">
+                  <h2 className="text-3xl  font-black mb-4 leading-tight">
                     Ensure Food Safety &{" "}
                     <span className="text-primary">Quality</span>
                   </h2>

@@ -43,13 +43,13 @@ export default function TrainingAcademyHero() {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-4xl font-black text-white mb-6 leading-tight">
               Build Your Career as a
               <span className="block text-accent1">Lab Analyst</span>
             </h1>
 
             {/* Subheading */}
-            <p className="text-xl md:text-2xl text-white/90 font-semibold mb-4">
+            <p className="text-xl  text-white/90 font-semibold mb-4">
               Hands-on Industrial Training for B.Sc, M.Sc, B.Pharm & M.Pharm
               Graduates
             </p>

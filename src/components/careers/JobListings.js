@@ -83,7 +83,7 @@ export default function JobListings({ jobs, onApply }) {
                           </span>
                         </div>
 
-                        <h3 className="text-xl md:text-2xl font-black text-gray-700 mb-3 wrap-break-word">
+                        <h3 className="text-xl  font-black text-gray-700 mb-3 wrap-break-word">
                           {job.title}
                         </h3>
 

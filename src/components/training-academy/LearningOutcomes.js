@@ -26,7 +26,7 @@ export default function LearningOutcomes() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
+            <h2 className="text-3xl  font-black text-gray-900 mb-4">
               What You&apos;ll Be Able to Do
             </h2>
             <p className="text-gray-600 text-lg">

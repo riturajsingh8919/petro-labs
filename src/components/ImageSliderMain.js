@@ -1,7 +1,7 @@
 // app/page.js
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ImageSlider from "./ImageSlider";
 import Link from "next/link";
@@ -10,6 +10,7 @@ export default function Home() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [direction, setDirection] = useState("right");
+  const mainSliderTimerRef = useRef(null);
 
   const slides = [
     {
@@ -117,12 +118,20 @@ export default function Home() {
   ];
 
   const handleNext = () => {
+    // Clear timer when manually navigating
+    if (mainSliderTimerRef.current) {
+      clearTimeout(mainSliderTimerRef.current);
+    }
     setDirection("right");
     setActiveImageIndex(0);
     setCurrentSlideIndex((prev) => (prev + 1 === slides.length ? 0 : prev + 1));
   };
 
   const handlePrevious = () => {
+    // Clear timer when manually navigating
+    if (mainSliderTimerRef.current) {
+      clearTimeout(mainSliderTimerRef.current);
+    }
     setDirection("left");
     setActiveImageIndex(0);
     setCurrentSlideIndex((prev) =>
@@ -131,9 +140,21 @@ export default function Home() {
   };
 
   const handleDotClick = (index) => {
+    // Clear timer when manually navigating
+    if (mainSliderTimerRef.current) {
+      clearTimeout(mainSliderTimerRef.current);
+    }
     setDirection(index > currentSlideIndex ? "right" : "left");
     setActiveImageIndex(0);
     setCurrentSlideIndex(index);
+  };
+
+  // Handle when image slider completes a full cycle
+  const handleImageCycleComplete = () => {
+    // When all 3 images have been shown, advance to next main slide
+    setDirection("right");
+    setActiveImageIndex(0);
+    setCurrentSlideIndex((prev) => (prev + 1 === slides.length ? 0 : prev + 1));
   };
 
   const currentSlide = slides[currentSlideIndex];
@@ -229,7 +250,7 @@ export default function Home() {
                         </h1>
 
                         {/* Description */}
-                        <p className="text-gray-600 text-base md:text-lg lg:text-xl leading-relaxed mb-10">
+                        <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-10">
                           {currentContent.description}
                         </p>
 
@@ -271,6 +292,7 @@ export default function Home() {
                       images={currentSlide.images}
                       onActiveChange={setActiveImageIndex}
                       activeIndex={activeImageIndex}
+                      onCycleComplete={handleImageCycleComplete}
                     />
                   </div>
                 </div>

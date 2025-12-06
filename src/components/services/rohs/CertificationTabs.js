@@ -216,7 +216,7 @@ export default function CertificationTabs() {
                   <CertIcon className="w-10 h-10" />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-3xl md:text-4xl font-black mb-3">
+                  <h2 className="text-3xl  font-black mb-3">
                     {currentCert.title}
                   </h2>
                   <p className="text-xl text-white/90 mb-4 font-semibold">
