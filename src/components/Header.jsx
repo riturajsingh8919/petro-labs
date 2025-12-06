@@ -8,8 +8,10 @@ import { usePathname } from "next/navigation";
 import { HiX, HiChevronDown } from "react-icons/hi";
 import { RiMenu3Fill } from "react-icons/ri";
 
+const loadFeatures = () =>
+  import("framer-motion").then((res) => res.domAnimation);
+
 const menuData = [
-  { title: "Home", href: "/" },
   {
     title: "Services",
     href: "/services",
@@ -126,10 +128,16 @@ const menuData = [
       },
     ],
   },
-  { title: "About", href: "/about" },
+  {
+    title: "About",
+    href: "#",
+    submenu: [
+      { title: "About Us", href: "/about-us" },
+      { title: "Contact Us", href: "/contact-us" },
+    ],
+  },
   { title: "Blogs", href: "/blogs" },
   { title: "Careers", href: "/careers" },
-  { title: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
@@ -248,13 +256,34 @@ export default function Header() {
                   {item.submenu || item.megaMenu ? (
                     <>
                       <button
-                        className={`relative group px-5 py-2.5 text-base font-body font-semibold transition-all duration-300 cursor-pointer ${
+                        className={`relative group px-5 py-2.5 text-base font-body font-semibold transition-all duration-300 cursor-pointer flex items-center gap-2 ${
                           isActive(item.href)
                             ? "text-accent1"
                             : "text-gray-800 hover:text-primary"
                         }`}
                       >
-                        {item.title}
+                        <span>{item.title}</span>
+
+                        {/* Animated Chevron Icon */}
+                        <motion.span
+                          animate={{
+                            rotate: openDropdown === item.title ? 180 : 0,
+                          }}
+                          transition={{
+                            duration: 0.3,
+                            ease: [0.4, 0, 0.2, 1],
+                          }}
+                          className="inline-flex"
+                        >
+                          <HiChevronDown
+                            className={`w-4 h-4 transition-colors duration-300 ${
+                              openDropdown === item.title
+                                ? "text-primary"
+                                : "text-gray-500 group-hover:text-primary"
+                            }`}
+                          />
+                        </motion.span>
+
                         <motion.span
                           className="absolute bottom-1 left-5 right-5 h-0.5 bg-linear-to-r from-primary via-accent1 to-primary rounded-full"
                           initial={{ scaleX: 0 }}
@@ -454,13 +483,24 @@ export default function Header() {
                           >
                             {item.title}
                           </motion.span>
-                          <HiChevronDown
-                            className={`w-10 h-10 text-white transition-transform duration-300 ${
-                              openMobileSubmenu === item.title
-                                ? "rotate-180 text-accent1"
-                                : ""
-                            }`}
-                          />
+                          <motion.span
+                            animate={{
+                              rotate:
+                                openMobileSubmenu === item.title ? 180 : 0,
+                            }}
+                            transition={{
+                              duration: 0.4,
+                              ease: [0.4, 0, 0.2, 1],
+                            }}
+                          >
+                            <HiChevronDown
+                              className={`w-10 h-10 transition-colors duration-300 ${
+                                openMobileSubmenu === item.title
+                                  ? "text-accent1"
+                                  : "text-white group-hover:text-accent1"
+                              }`}
+                            />
+                          </motion.span>
                         </button>
 
                         <AnimatePresence>
