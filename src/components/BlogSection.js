@@ -16,7 +16,7 @@ const BLOG_POSTS = [
     date: "Nov 15, 2025",
     category: "Oil Analysis",
     thumbnail: "/blog1.jpg",
-    postLink: "#",
+    postLink: "/blogs/why-oil-analysis-is-essential-for-modern-industries",
   },
   {
     title: "Understanding Viscosity: The Key to Lubricant Performance",
@@ -25,7 +25,7 @@ const BLOG_POSTS = [
     date: "Nov 10, 2025",
     category: "Lubrication",
     thumbnail: "/blog2.jpg",
-    postLink: "#",
+    postLink: "/blogs/understanding-viscosity-the-key-to-lubricant-performance",
   },
   {
     title: "Condition-Based Maintenance: The Future of Reliability",
@@ -34,7 +34,7 @@ const BLOG_POSTS = [
     date: "Nov 5, 2025",
     category: "Reliability",
     thumbnail: "/blog3.jpg",
-    postLink: "#",
+    postLink: "/blogs/condition-based-maintenance-the-future-of-reliability",
   },
 ];
 
@@ -55,7 +55,7 @@ const BlogSection = () => {
               <h2 className="text-4xl xl:text-5xl font-black leading-tight mb-1 text-gray-900">
                 Latest <span className="text-primary">Insights</span>
               </h2>
-              <Link href="/blog">
+              <Link href="/blogs">
                 <m.button
                   whileHover={{ x: 5 }}
                   className="hidden md:flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all duration-300 cursor-pointer"

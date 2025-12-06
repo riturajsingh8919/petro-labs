@@ -4,6 +4,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ImageSlider from "./ImageSlider";
+import Link from "next/link";
 
 export default function Home() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -14,9 +15,9 @@ export default function Home() {
     {
       id: 1,
       images: [
-        { src: "/slide1.png", alt: "Laboratory testing" },
-        { src: "/slide2.png", alt: "Quality analysis" },
-        { src: "/slide3.png", alt: "Professional equipment" },
+        { src: "/slide-1-a.png", alt: "Laboratory testing" },
+        { src: "/slide-1-b.png", alt: "Quality analysis" },
+        { src: "/slide-1-c.png", alt: "Professional equipment" },
       ],
       content: [
         {
@@ -25,6 +26,7 @@ export default function Home() {
           description:
             "Complete analysis of petroleum products, lubricants, fuels, and oils including viscosity, flash point, pour point, and contamination testing for quality assurance and performance optimization.",
           buttonText: "Learn More",
+          buttonLink: "/services/petroleum-lubricant-testing",
         },
         {
           title: "Transformer Oil",
@@ -32,6 +34,7 @@ export default function Home() {
           description:
             "Specialized dielectric strength, moisture content, and dissolved gas analysis for transformer oils ensuring electrical safety and optimal performance in power distribution systems.",
           buttonText: "Learn More",
+          buttonLink: "/services/transformer-oil-testing",
         },
         {
           title: "Water Testing",
@@ -39,15 +42,16 @@ export default function Home() {
           description:
             "Comprehensive microbiological, chemical, and physical water quality analysis for drinking, industrial, and environmental applications with ISO-certified laboratory results.",
           buttonText: "Learn More",
+          buttonLink: "/services/water-testing",
         },
       ],
     },
     {
       id: 2,
       images: [
-        { src: "/slide2.png", alt: "Certification process" },
-        { src: "/slide3.png", alt: "Testing facility" },
-        { src: "/slide1.png", alt: "Quality control" },
+        { src: "/slide-2-a.png", alt: "Certification process" },
+        { src: "/slide-2-b.png", alt: "Testing facility" },
+        { src: "/slide-2-c.png", alt: "Quality control" },
       ],
       content: [
         {
@@ -56,6 +60,7 @@ export default function Home() {
           description:
             "Precise freeze point, pH, reserve alkalinity, and urea concentration analysis of engine coolants and diesel exhaust fluid (DEF) to maintain vehicle performance and emission standards.",
           buttonText: "Get Started",
+          buttonLink: "/services/coolant-def-testing",
         },
         {
           title: "RoHS & ELC",
@@ -63,6 +68,7 @@ export default function Home() {
           description:
             "Restriction of Hazardous Substances (RoHS) and End-of-Life vehicle certification testing ensuring compliance with international environmental regulations for global market access.",
           buttonText: "Get Started",
+          buttonLink: "/services/rohs-elc-testing",
         },
         {
           title: "Chemical & Mechanical",
@@ -70,15 +76,16 @@ export default function Home() {
           description:
             "Advanced tensile strength, hardness testing, chemical composition analysis, and material characterization services for industrial materials, components, and finished products.",
           buttonText: "Get Started",
+          buttonLink: "/services/chemical-mechanical-testing",
         },
       ],
     },
     {
       id: 3,
       images: [
-        { src: "/slide3.png", alt: "Environmental testing" },
-        { src: "/slide1.png", alt: "Food analysis" },
-        { src: "/slide2.png", alt: "Metallography lab" },
+        { src: "/slide-3-a.png", alt: "Environmental testing" },
+        { src: "/slide-3-b.png", alt: "Food analysis" },
+        { src: "/slide-3-c.png", alt: "Metallography lab" },
       ],
       content: [
         {
@@ -86,21 +93,24 @@ export default function Home() {
           highlight: "Testing",
           description:
             "Detailed microscopic examination, grain size analysis, phase identification, and failure analysis for metals and alloys ensuring metallurgical quality control and process optimization.",
-          buttonText: "Schedule Call",
+          buttonText: "Read More",
+          buttonLink: "/services/metallography-testing",
         },
         {
           title: "Food & Agriculture",
           highlight: "Testing",
           description:
             "Comprehensive microbiological testing, pesticide residue analysis, nutritional profiling, and contaminant detection for food safety and agricultural product quality with NABL accreditation.",
-          buttonText: "Schedule Call",
+          buttonText: "Read More",
+          buttonLink: "/services/food-agriculture-testing",
         },
         {
           title: "Environmental",
           highlight: "Testing",
           description:
             "Complete air quality monitoring, soil contamination analysis, water pollution assessment, and environmental impact studies for regulatory compliance and sustainability initiatives.",
-          buttonText: "Schedule Call",
+          buttonText: "Read More",
+          buttonLink: "/services/environmental-testing",
         },
       ],
     },
@@ -224,31 +234,33 @@ export default function Home() {
                         </p>
 
                         {/* CTA Button */}
-                        <motion.button
-                          whileHover={{ scale: 1.03 }}
-                          whileTap={{ scale: 0.98 }}
-                          className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-sm md:text-base transition-all duration-300 cursor-pointer overflow-hidden"
-                        >
-                          <div className="absolute inset-0 bg-linear-to-r from-primary to-primary/85 transition-opacity duration-300 group-hover:opacity-0" />
-                          <div className="absolute inset-0 bg-linear-to-r from-accent1 via-accent2 to-accent2 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-                          <span className="relative z-10 text-white">
-                            {currentContent.buttonText}
-                          </span>
-                          <svg
-                            className="w-5 h-5 relative z-10 text-white transition-transform duration-300 group-hover:translate-x-1"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
+                        <Link href={currentContent.buttonLink}>
+                          <motion.button
+                            whileHover={{ scale: 1.03 }}
+                            whileTap={{ scale: 0.98 }}
+                            className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-sm md:text-base transition-all duration-300 cursor-pointer overflow-hidden"
                           >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M17 8l4 4m0 0l-4 4m4-4H3"
-                            />
-                          </svg>
-                        </motion.button>
+                            <div className="absolute inset-0 bg-linear-to-r from-primary to-primary/85 transition-opacity duration-300 group-hover:opacity-0" />
+                            <div className="absolute inset-0 bg-linear-to-r from-accent1 via-accent2 to-accent2 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                            <span className="relative z-10 text-white">
+                              {currentContent.buttonText}
+                            </span>
+                            <svg
+                              className="w-5 h-5 relative z-10 text-white transition-transform duration-300 group-hover:translate-x-1"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                              />
+                            </svg>
+                          </motion.button>
+                        </Link>
                       </motion.div>
                     </AnimatePresence>
                   </div>

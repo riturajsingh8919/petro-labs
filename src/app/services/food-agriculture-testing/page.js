@@ -1,14 +1,46 @@
-export default function PetroleumLubricantPage() {
-  return (
-    <div className="p-8 md:p-12 lg:p-16">
-      <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
-        Transformer Oil Testing
-      </h1>
-      <p className="text-lg text-gray-600 mb-8">
-        This is a placeholder. Add your service content here.
-      </p>
+export const metadata = {
+  title: "Food Testing Services | NABL Accredited Food Lab India | Petrolabs",
+  description:
+    "Petrolabs India Pvt. Ltd. offers NABL-accredited Food Testing Services across spices, dairy, meat, beverages, oils, bakery & processed foods. Chemical, nutritional, microbiological, and contaminant analysis as per FSSAI, BIS, ISO, AOAC & Codex standards.",
+  keywords: [
+    "food testing services",
+    "NABL food testing lab",
+    "spice testing lab",
+    "dairy product testing",
+    "meat testing laboratory",
+    "beverage testing lab",
+    "edible oil testing",
+    "bakery product testing",
+    "food contaminant analysis",
+    "nutritional analysis",
+    "microbiological food testing",
+    "pesticide residue testing",
+    "FSSAI food testing",
+    "food lab India",
+  ],
+};
 
-      {/* Add your custom content */}
-    </div>
+import FAQ from "@/components/services/food/FAQ";
+import FoodCategories from "@/components/services/food/FoodCategories";
+import FoodCTA from "@/components/services/food/FoodCTA";
+import FoodHero from "@/components/services/food/FoodHero";
+import FoodOverview from "@/components/services/food/FoodOverview";
+import TestingParameters from "@/components/services/food/TestingParameters";
+import WhyChoose from "@/components/services/food/WhyChoose";
+import React from "react";
+
+function page() {
+  return (
+    <>
+      <FoodHero />
+      <FoodOverview />
+      <FoodCategories />
+      <TestingParameters />
+      <WhyChoose />
+      <FAQ />
+      <FoodCTA />
+    </>
   );
 }
+
+export default page;

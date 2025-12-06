@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { HiX, HiChevronDown } from "react-icons/hi";
 import { RiMenu3Fill } from "react-icons/ri";
 
@@ -47,7 +47,7 @@ const menuData = [
   },
   {
     title: "Products",
-    href: "/products",
+    href: "#",
     submenu: [
       {
         title: "Spectro Scientific USA",
@@ -128,6 +128,7 @@ const menuData = [
       },
     ],
   },
+  { title: "Training Academy", href: "/training-academy" },
   {
     title: "About",
     href: "#",
@@ -148,19 +149,17 @@ export default function Header() {
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState(null);
   const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Show header when at the top
       if (currentScrollY < 50) {
         setIsVisible(true);
       } else if (currentScrollY > lastScrollY) {
-        // Scrolling down - hide header
         setIsVisible(false);
       } else {
-        // Scrolling up - show header
         setIsVisible(true);
       }
 
@@ -183,7 +182,14 @@ export default function Header() {
   const isActive = (href) =>
     pathname === href || pathname.startsWith(href + "/");
 
-  // Stagger animation for submenu items
+  const handleParentClick = (e, href) => {
+    if (href && href !== "#") {
+      e.stopPropagation();
+      setOpenDropdown(null);
+      router.push(href);
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -254,8 +260,10 @@ export default function Header() {
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
                   {item.submenu || item.megaMenu ? (
-                    <>
-                      <button
+                    <div className="relative group">
+                      <Link
+                        href={item.href}
+                        onClick={(e) => handleParentClick(e, item.href)}
                         className={`relative group px-5 py-2.5 text-base font-body font-semibold transition-all duration-300 cursor-pointer flex items-center gap-2 ${
                           isActive(item.href)
                             ? "text-accent1"
@@ -264,7 +272,6 @@ export default function Header() {
                       >
                         <span>{item.title}</span>
 
-                        {/* Animated Chevron Icon */}
                         <motion.span
                           animate={{
                             rotate: openDropdown === item.title ? 180 : 0,
@@ -291,7 +298,7 @@ export default function Header() {
                           transition={{ duration: 0.3 }}
                         />
                         <span className="absolute bottom-1 left-5 right-5 h-0.5 bg-linear-to-r from-primary via-accent1 to-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center rounded-full" />
-                      </button>
+                      </Link>
 
                       <AnimatePresence>
                         {openDropdown === item.title && (
@@ -374,7 +381,7 @@ export default function Header() {
                           </motion.div>
                         )}
                       </AnimatePresence>
-                    </>
+                    </div>
                   ) : (
                     <Link
                       href={item.href}
@@ -436,7 +443,7 @@ export default function Header() {
         </div>
       </motion.header>
 
-      {/* Full-Screen Mobile Menu Overlay */}
+      {/* Mobile Menu - Keep as is */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div

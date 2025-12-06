@@ -1,0 +1,67 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Field Service Engineer - SOUTH",
+      "department": "Technical Services",
+      "location": "Rajasthan / Madhya Pradesh",
+      "type": "Full-time",
+      "experience": "1+ years",
+      "description": "Perform installation & training on new instruments, in-field repairs, upgrades, and calibration of systems in southern region.",
+      "responsibilities": [
+        "Perform installation & training on new instruments, in-field repairs, upgrades, and calibration of systems",
+        "Follow diagnostic and repair guidelines",
+        "Maintain a professional interaction with customers while working on critical issues",
+        "Maintain the ability for a flexible travel schedule to accommodate last minute changes"
+      ],
+      "qualifications": [
+        "1+ years of experience debugging electro-mechanical products and assemblies",
+        "Diploma in Mechanical Engineering and Instrumentation Engineering",
+        "Flexibility in scheduling for longer trips and weekends a plus"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Marketing Executive",
+      "department": "Sales & Marketing",
+      "location": "Baroda / Surat / Ahmedabad / Bhubaneswar / Kolkata",
+      "type": "Full-time",
+      "experience": "1+ years",
+      "description": "Promote Petrolabs products and services in assigned area, generate leads and convert them into sales.",
+      "responsibilities": [
+        "To achieve the sales target for the assigned area",
+        "To promote Petrolabs products and Services for the assigned area",
+        "To generate leads & converting leads into sales",
+        "Experience in selling Analytical instruments or Industrial products is a PLUS",
+        "Candidate should have excellent communication skills"
+      ],
+      "qualifications": [
+        "Experience in selling & Servicing of Lab equipment to Heavy Industries, Universities, Research Institutes",
+        "Capable of understanding customer requirement and field sales to new customers",
+        "Resident of Baroda/Ahmedabad will be preferred",
+        "Prior experience working with Filtration companies or Condition Monitoring service providers will be a PLUS"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Lab Analyst",
+      "department": "Laboratory Services",
+      "location": "Hyderabad",
+      "type": "Full-time",
+      "experience": "Freshers welcome",
+      "description": "Test or analyze used oil samples to detect presence of contaminants and ensure products meet quality standards.",
+      "responsibilities": [
+        "Test or analyze used oil samples to detect presence of water, contaminants, wear indicating potential issues for the critical equipment",
+        "Determine physical or chemical properties to ensure that products meet quality standards",
+        "Maintain accurate records and documentation",
+        "Operate and maintain analytical instruments"
+      ],
+      "qualifications": [
+        "B.Sc., Chemistry or M.Sc. chemistry with 0+ years of experience",
+        "Working experience of any analytical instrument is a PLUS",
+        "Attention to detail and analytical thinking",
+        "Good communication skills"
+      ]
+    }
+  ]
+}

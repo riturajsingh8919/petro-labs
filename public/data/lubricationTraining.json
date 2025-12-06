@@ -1,0 +1,248 @@
+{
+  "courses": [
+    {
+      "id": 7,
+      "slug": "oil-analysis-ferrography",
+      "title": "Oil Analysis & Ferrography Training",
+      "shortTitle": "Oil Analysis",
+      "subtitle": "Ferrography Interpretation Training",
+      "description": "Specialized oil analysis training focused on interpreting laboratory reports and applying ferrography techniques to detect wear, contamination, and lubricant degradation.",
+      "category": "Lubrication & Reliability",
+      "duration": "5 Days",
+      "level": "Intermediate to Advanced",
+      "price": "Contact for Pricing",
+      "image": "/training/oil-analysis.png",
+      "icon": "HiCog",
+      "color": "primary",
+      "modules": [
+        "Fundamentals of lubricants & oil degradation",
+        "Oil analysis parameters (viscosity, TAN, TBN, particle count, FTIR, ICP)",
+        "Ferrography: Analytical & Direct Reading methods",
+        "Case studies in predictive maintenance",
+        "Best practices for report interpretation"
+      ],
+      "outcomes": [
+        "Interpret oil analysis reports with confidence",
+        "Detect abnormal wear & contamination early",
+        "Apply ferrography in condition monitoring programs"
+      ],
+      "targetAudience": [
+        "Reliability engineers",
+        "Maintenance supervisors",
+        "Lubricant OEMs & distributors"
+      ],
+      "seoTitle": "Oil Analysis & Ferrography Training | Lubricant Testing Course | Petrolabs",
+      "seoDescription": "Petrolabs offers oil analysis & ferrography training. Learn wear particle analysis, oil degradation monitoring & predictive maintenance interpretation.",
+      "seoKeywords": "oil analysis training, ferrography course, wear particle analysis training, lubricant testing training, predictive maintenance training"
+    },
+    {
+      "id": 8,
+      "slug": "condition-based-maintenance",
+      "title": "Condition-Based Maintenance Training",
+      "shortTitle": "CBM",
+      "subtitle": "Predictive Maintenance Strategies",
+      "description": "Introduction to predictive maintenance strategies using oil analysis, vibration monitoring, and failure mode analysis to extend equipment life and reduce costs.",
+      "category": "Lubrication & Reliability",
+      "duration": "4 Days",
+      "level": "Intermediate",
+      "price": "Contact for Pricing",
+      "image": "/training/cbm.png",
+      "icon": "HiWrenchScrewdriver",
+      "color": "secondary",
+      "modules": [
+        "Maintenance strategies (reactive, preventive, predictive, proactive)",
+        "Condition monitoring tools (oil analysis, vibration, thermography, ultrasonics)",
+        "Failure Mode Effects Analysis (FMEA)",
+        "Case studies: cost savings from CBM"
+      ],
+      "outcomes": [
+        "Apply CBM to reduce unplanned downtime",
+        "Interpret condition monitoring data",
+        "Integrate oil analysis with vibration & thermography"
+      ],
+      "targetAudience": [
+        "Plant engineers",
+        "Maintenance managers",
+        "Reliability professionals"
+      ],
+      "seoTitle": "Condition-Based Maintenance Training | Predictive Maintenance Course | Petrolabs",
+      "seoDescription": "Petrolabs offers CBM training covering oil analysis, vibration monitoring, and FMEA. Learn predictive maintenance strategies for reliability engineering.",
+      "seoKeywords": "condition based maintenance training, predictive maintenance training, CBM course India, reliability training, FMEA training"
+    },
+    {
+      "id": 9,
+      "slug": "machinery-lubrication-1",
+      "title": "Machinery Lubrication I (MLT I / MLA I)",
+      "shortTitle": "MLT I / MLA I",
+      "subtitle": "ICML Certification Level I",
+      "description": "Entry-level program covering fundamentals of lubrication, lubricant handling, and basic oil analysis techniques, aligned with ICML certification requirements.",
+      "category": "Lubrication & Reliability",
+      "duration": "3 Days",
+      "level": "Beginner",
+      "price": "Contact for Pricing",
+      "image": "/training/mlt-1.png",
+      "icon": "MdOilBarrel",
+      "color": "accent1",
+      "modules": [
+        "Lubrication fundamentals & lubricant types",
+        "Contamination control (dust, water, air, fuel, soot)",
+        "Lubricant storage, handling & application",
+        "Oil sampling best practices",
+        "Basics of oil analysis & ISO cleanliness codes"
+      ],
+      "outcomes": [
+        "Understand lubricant functions & failure modes",
+        "Implement proper storage & handling practices",
+        "Take representative oil samples for analysis"
+      ],
+      "targetAudience": [
+        "Technicians & lube route operators",
+        "Junior maintenance staff",
+        "Professionals preparing for ICML MLT I/MLA I certification"
+      ],
+      "seoTitle": "Machinery Lubrication I Training (MLT I / MLA I) | Petrolabs",
+      "seoDescription": "Petrolabs offers Machinery Lubrication I training. Learn lubrication fundamentals, oil sampling, and contamination control aligned with ICML MLA I & MLT I certifications.",
+      "seoKeywords": "machinery lubrication training, MLT I training, MLA I course India, lubrication certification training, ICML preparation"
+    },
+    {
+      "id": 10,
+      "slug": "machinery-lubrication-2",
+      "title": "Machinery Lubrication II (MLT II)",
+      "shortTitle": "MLT II",
+      "subtitle": "ICML Certification Level II",
+      "description": "Intermediate program that builds on MLT I and expands to lubrication program design, contamination control strategies, and reliability improvement.",
+      "category": "Lubrication & Reliability",
+      "duration": "4 Days",
+      "level": "Intermediate",
+      "price": "Contact for Pricing",
+      "image": "/training/mlt-2.png",
+      "icon": "HiBolt",
+      "color": "accent2",
+      "modules": [
+        "Advanced lubrication theory",
+        "Lubricant selection & consolidation",
+        "Lube route design & optimization",
+        "Filtration & separation technologies",
+        "KPI measurement for lubrication excellence"
+      ],
+      "outcomes": [
+        "Design & manage lubrication programs",
+        "Select lubricants for specific applications",
+        "Improve reliability through contamination control"
+      ],
+      "targetAudience": [
+        "Experienced maintenance engineers",
+        "Lubrication supervisors",
+        "Professionals preparing for ICML MLT II certification"
+      ],
+      "seoTitle": "Machinery Lubrication II Training (MLT II) | Advanced Lubrication Course",
+      "seoDescription": "Petrolabs offers MLT II training covering advanced lubrication, contamination control & program management. Ideal for ICML certification preparation.",
+      "seoKeywords": "MLT II training India, advanced lubrication course, ICML lubrication certification, machinery lubrication program training"
+    },
+    {
+      "id": 11,
+      "slug": "mle",
+      "title": "Machinery Lubrication Engineer (MLE)",
+      "shortTitle": "MLE",
+      "subtitle": "ICML Engineering Certification",
+      "description": "Designed for engineers managing plant-wide lubrication reliability initiatives and preparing for ICML MLE certification.",
+      "category": "Lubrication & Reliability",
+      "duration": "5 Days",
+      "level": "Advanced",
+      "price": "Contact for Pricing",
+      "image": "/training/mle.png",
+      "icon": "HiCpuChip",
+      "color": "primary",
+      "modules": [
+        "Lubrication management principles",
+        "Lubricant selection & consolidation strategies",
+        "Total Lubrication Management (TLM)",
+        "Lubrication program auditing",
+        "Leadership in reliability engineering"
+      ],
+      "outcomes": [
+        "Develop & lead lubrication programs",
+        "Optimize lube storage & contamination control",
+        "Align lubrication practices with corporate reliability goals"
+      ],
+      "targetAudience": [
+        "Reliability engineers",
+        "Senior maintenance managers",
+        "Professionals seeking ICML MLE certification"
+      ],
+      "seoTitle": "Machinery Lubrication Engineer Training (MLE) | Petrolabs",
+      "seoDescription": "Petrolabs provides Machinery Lubrication Engineer (MLE) training. Learn lubrication program management, contamination control & TLM strategies.",
+      "seoKeywords": "Machinery Lubrication Engineer training, MLE certification India, lubrication management course, ICML lubrication engineer training"
+    },
+    {
+      "id": 12,
+      "slug": "mla-2",
+      "title": "Machine Lubricant Analyst II (MLA II)",
+      "shortTitle": "MLA II",
+      "subtitle": "ICML Analyst Certification Level II",
+      "description": "Covers oil analysis techniques for condition monitoring, aligned with ICML MLA II requirements.",
+      "category": "Lubrication & Reliability",
+      "duration": "4 Days",
+      "level": "Intermediate",
+      "price": "Contact for Pricing",
+      "image": "/training/mla-2.png",
+      "icon": "HiMagnifyingGlass",
+      "color": "secondary",
+      "modules": [
+        "Oil analysis technologies (FTIR, ICP, particle count)",
+        "Oil sampling strategies & trending",
+        "Wear debris analysis basics",
+        "Oil analysis report interpretation",
+        "Case studies in condition monitoring"
+      ],
+      "outcomes": [
+        "Apply oil analysis in predictive maintenance",
+        "Identify wear, contamination & lubricant health issues",
+        "Support asset reliability decisions"
+      ],
+      "targetAudience": [
+        "Reliability engineers & analysts",
+        "CBM professionals",
+        "Candidates preparing for ICML MLA II certification"
+      ],
+      "seoTitle": "Machine Lubricant Analyst II Training (MLA II) | Petrolabs",
+      "seoDescription": "Petrolabs offers MLA II training covering oil analysis, wear debris detection & condition monitoring. Prepares professionals for ICML MLA II certification.",
+      "seoKeywords": "MLA II training, machine lubricant analyst course, oil analysis certification training, ICML MLA II preparation"
+    },
+    {
+      "id": 13,
+      "slug": "mla-3",
+      "title": "Machine Lubricant Analyst III (MLA III)",
+      "shortTitle": "MLA III",
+      "subtitle": "ICML Analyst Certification Level III",
+      "description": "The most advanced oil analysis training, focusing on root cause failure analysis and reliability improvement.",
+      "category": "Lubrication & Reliability",
+      "duration": "5 Days",
+      "level": "Advanced",
+      "price": "Contact for Pricing",
+      "image": "/training/mla-3.png",
+      "icon": "HiShieldCheck",
+      "color": "accent1",
+      "modules": [
+        "Advanced wear debris analysis & ferrography",
+        "Oil degradation chemistry & varnish formation",
+        "Root cause failure analysis (RCFA)",
+        "Integration of oil analysis with vibration, ultrasound & thermography",
+        "Reliability program optimization"
+      ],
+      "outcomes": [
+        "Lead oil analysis programs in large plants",
+        "Conduct RCFA with oil analysis data",
+        "Integrate multi-discipline condition monitoring for reliability excellence"
+      ],
+      "targetAudience": [
+        "Senior reliability engineers",
+        "Asset health managers",
+        "Candidates preparing for ICML MLA III certification"
+      ],
+      "seoTitle": "Machine Lubricant Analyst III Training (MLA III) | Petrolabs",
+      "seoDescription": "Petrolabs offers MLA III training in advanced oil analysis, wear debris analysis & RCFA. Ideal for ICML MLA III certification preparation.",
+      "seoKeywords": "MLA III training, advanced oil analysis training, wear debris analysis course, RCFA oil analysis, ICML MLA III training India"
+    }
+  ]
+}
