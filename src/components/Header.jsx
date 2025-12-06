@@ -233,7 +233,7 @@ export default function Header() {
                 className="relative w-32 h-12 lg:w-40 lg:h-14"
               >
                 <Image
-                  src="/logo.png"
+                  src="/logo1.png"
                   alt="PetroLabs"
                   fill
                   className="object-contain"

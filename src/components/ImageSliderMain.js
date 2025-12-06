@@ -185,7 +185,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-gray-100 to-white relative overflow-hidden pt-20">
+    <div className="min-h-screen bg-linear-to-br from-gray-100 to-white relative overflow-hidden pt-20 lg:pt-32">
       {/* Decorative Background */}
       <div className="absolute inset-0 pointer-events-none opacity-50">
         <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary rounded-full blur-3xl opacity-5" />
