@@ -229,13 +229,13 @@ export default function Header() {
                   ease: [0.43, 0.13, 0.23, 0.96],
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative w-32 h-12 lg:w-56 lg:h-16"
+                className="relative w-32 h-auto lg:w-56 lg:h-auto"
               >
                 <Image
-                  src="/logo1.png"
+                  src="/logo-new.png"
                   alt="PetroLabs"
-                  width={4144}
-                  height={1292}
+                  width={4157}
+                  height={1390}
                   quality={100}
                   className="object-contain"
                 />

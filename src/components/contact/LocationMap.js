@@ -65,11 +65,11 @@ export default function LocationMap() {
                 <p className="font-bold text-gray-900">
                   Petrolabs India Pvt. Ltd.
                 </p>
-                <p>Building No. 5-36/1/11-A</p>
-                <p>Plot No. 11-A, 3rd Floor</p>
-                <p>TSIIC, IALA, Prashanth Nagar</p>
-                <p>Kukatpally, Hyderabad</p>
-                <p>Telangana 500072</p>
+                <p>Building No.: 5,</p>
+                <p>Durga Shakthi Peetam Colony,</p>
+                <p>5-35 / P-27 & 28 P, Prashanti Nagar,</p>
+                <p>Mythri Nagar, Kukatpally,</p>
+                <p>Hyderabad, Telangana 500072</p>
               </div>
             </m.div>
 

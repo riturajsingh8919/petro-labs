@@ -253,9 +253,9 @@ const Footer = () => {
                         Address
                       </h5>
                       <p className="text-sm text-white/70 leading-relaxed">
-                        Building No. 5-36/1/11-A, Plot No. 11-A, 3rd Floor,
-                        TSIIC, IALA, Prashanth Nagar, Kukatpally, Hyderabad,
-                        Telangana 500072
+                        Building No.: 5, Durga Shakthi Peetam Colony, 5-35 /
+                        P-27 & 28 P, Prashanti Nagar, Mythri Nagar, Kukatpally,
+                        Hyderabad, Telangana 500072
                       </p>
                     </div>
                   </div>
