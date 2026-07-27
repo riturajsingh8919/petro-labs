@@ -17,6 +17,15 @@ export const metadata = {
     "sample pickup request",
     "testing service inquiry",
   ],
+  openGraph: {
+    title: "Contact Petrolabs | NABL Accredited Testing Laboratory",
+    description:
+      "Get in touch with Petrolabs India Pvt. Ltd. for NABL-accredited testing services. Contact us for quotations, sample pickup, technical support, or service inquiries.",
+    url: "/contact-us",
+  },
+  alternates: {
+    canonical: "/contact-us",
+  },
 };
 
 function page() {

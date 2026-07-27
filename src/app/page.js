@@ -9,6 +9,21 @@ import TrainingCoursesSection from "@/components/TrainingCoursesSection";
 import AccreditationSection from "@/components/AccreditationSection";
 import React from "react";
 
+export const metadata = {
+  title: "PetroLabs India Pvt. Ltd.",
+  description:
+    "Welcome to PetroLabs India. We supply world-class oil, fuel and fluid analysis instruments, and provide NABL accredited laboratory testing and industrial training.",
+  openGraph: {
+    title: "PetroLabs India | Reliable Diagnostics & Training",
+    description:
+      "Welcome to PetroLabs India. We supply world-class oil, fuel and fluid analysis instruments, and provide NABL accredited laboratory testing and industrial training.",
+    url: "/",
+  },
+  alternates: {
+    canonical: "/",
+  },
+};
+
 function Page() {
   return (
     <>
