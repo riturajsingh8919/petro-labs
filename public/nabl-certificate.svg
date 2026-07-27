@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bgNabl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    <linearGradient id="blueNabl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="100%" stop-color="#1e40af" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Border -->
+  <rect x="20" y="20" width="360" height="360" rx="40" fill="url(#bgNabl)" stroke="#e2e8f0" stroke-width="6"/>
+  
+  <!-- Inner Blue Gear/Sunburst Approximation (using overlapping squares) -->
+  <g fill="url(#blueNabl)" transform="translate(200,200)">
+    <rect x="-120" y="-120" width="240" height="240" rx="20" />
+    <rect x="-120" y="-120" width="240" height="240" rx="20" transform="rotate(45)" />
+  </g>
+  
+  <!-- Inner White Circle -->
+  <circle cx="200" cy="200" r="140" fill="#ffffff" />
+  
+  <!-- Center Text -->
+  <text x="200" y="180" font-family="Arial, sans-serif" font-size="64" font-weight="900" fill="#1e3a8a" text-anchor="middle" letter-spacing="4">NABL</text>
+  
+  <!-- Subtext -->
+  <text x="200" y="220" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#64748b" text-anchor="middle" letter-spacing="2">NATIONAL ACCREDITATION BOARD</text>
+  <text x="200" y="240" font-family="Arial, sans-serif" font-size="12" font-weight="normal" fill="#94a3b8" text-anchor="middle" letter-spacing="1">FOR TESTING AND CALIBRATION LABORATORIES</text>
+  
+  <!-- Lower text representing certificate -->
+  <text x="200" y="290" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">ACCREDITED LABORATORY</text>
+  <line x1="120" y1="305" x2="280" y2="305" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="200" y="330" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#64748b" text-anchor="middle">ISO/IEC 17025 COMPLIANT</text>
+</svg>

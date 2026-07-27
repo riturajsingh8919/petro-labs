@@ -1,7 +1,7 @@
 "use client";
 
 import { LazyMotion, m } from "framer-motion";
-import { HiPhone, HiEnvelope, HiMapPin, HiClock } from "react-icons/hi2";
+import { HiPhone, HiEnvelope, HiMapPin } from "react-icons/hi2";
 
 const loadFeatures = () =>
   import("framer-motion").then((res) => res.domAnimation);
@@ -11,8 +11,17 @@ export default function ContactInfo() {
     {
       icon: HiPhone,
       title: "Call Us",
-      details: ["040-23156400", "7675043138, 39, 40, 41"],
-      link: "tel:04023156400",
+      details: [
+        <a key="1" href="tel:040-23156400" className="hover:text-primary transition-colors">040-23156400</a>,
+        <span key="2">
+          <a href="tel:7675043138" className="hover:text-primary transition-colors">7675043138</a>,{" "}
+          <a href="tel:7675043139" className="hover:text-primary transition-colors">7675043139</a>
+        </span>,
+        <span key="3">
+          <a href="tel:7675043140" className="hover:text-primary transition-colors">7675043140</a>,{" "}
+          <a href="tel:7675043141" className="hover:text-primary transition-colors">7675043141</a>
+        </span>
+      ],
       color: "primary",
     },
     {
@@ -25,15 +34,13 @@ export default function ContactInfo() {
     {
       icon: HiMapPin,
       title: "Visit Us",
-      details: ["Kukatpally, Hyderabad", "Telangana 500072"],
+      details: [
+        "Building No.: 5, Durga Shakthi Peetam Colony,",
+        "5-35 / P-27 & 28 P, Prashanti Nagar, Mythri Nagar,",
+        "Kukatpally, Hyderabad, Telangana 500072",
+      ],
       link: "#map",
       color: "accent1",
-    },
-    {
-      icon: HiClock,
-      title: "Working Hours",
-      details: ["Mon - Sat: 9 AM - 6 PM", "Sunday: Closed"],
-      color: "accent2",
     },
   ];
 
@@ -67,7 +74,7 @@ export default function ContactInfo() {
   return (
     <LazyMotion features={loadFeatures} strict>
       <section className="container mx-auto px-8 md:px-12 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {contactMethods.map((method, index) => {
             const Icon = method.icon;
             const colors = colorClasses[method.color];

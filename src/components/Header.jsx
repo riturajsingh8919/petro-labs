@@ -64,7 +64,11 @@ const menuData = [
         href: "https://www.filtertechnik.co.uk/particle-pal-range",
         external: true,
       },
-      { title: "FTIR Spectrometers", href: "/products/ftir-spectrometers" },
+      {
+        title: "FTIR Spectrometers",
+        href: "https://www.shimadzu.com/an/products/molecular-spectroscopy/ftir/index.html",
+        external: true,
+      },
       {
         title: "XRF Analyzers",
         href: "https://spectronxray.ru/en/",
@@ -77,12 +81,13 @@ const menuData = [
       },
       {
         title: "Triple R Japan Filtration",
-        href: "https://petrolabsindia.com/products/triple-r-japan/",
+        href: "https://www.triple-r.co.jp/",
         external: true,
       },
       {
         title: "Industrial Lubricants",
-        href: "/products/industrial-lubricants",
+        href: "https://www.chevronlubricants.com/?tags=on,on,on",
+        external: true,
       },
     ],
   },

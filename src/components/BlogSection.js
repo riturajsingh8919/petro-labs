@@ -10,31 +10,31 @@ const loadFeatures = () =>
 
 const BLOG_POSTS = [
   {
-    title: "Why Oil Analysis Is Essential for Modern Industries",
+    title: "The Critical Role of Petroleum Testing in Modern Industry",
     subtitle:
-      "A quick overview of how oil analysis helps reduce breakdowns, extend equipment life, and improve reliability.",
-    date: "Nov 15, 2025",
-    category: "Oil Analysis",
-    thumbnail: "/blog1.jpg",
-    postLink: "/blogs/why-oil-analysis-is-essential-for-modern-industries",
+      "Discover how rigorous petroleum analysis prevents catastrophic equipment failures, ensures regulatory compliance, and extends the lifecycle of machinery.",
+    date: "Jul 20, 2026",
+    category: "Petroleum Testing",
+    thumbnail: "/blog/petroleum-testing.png",
+    postLink: "/blogs/petroleum-testing-ensuring-quality-and-compliance",
   },
   {
-    title: "Understanding Viscosity: The Key to Lubricant Performance",
+    title: "Navigating Water Quality: From IS 10500 to Industrial Standards",
     subtitle:
-      "Learn how viscosity affects lubrication efficiency, equipment protection, and oil health monitoring.",
-    date: "Nov 10, 2025",
-    category: "Lubrication",
-    thumbnail: "/blog2.jpg",
-    postLink: "/blogs/understanding-viscosity-the-key-to-lubricant-performance",
+      "A deep dive into the complexities of water quality testing in India. Learn the differences between potable water standards and stringent industrial requirements.",
+    date: "Jul 15, 2026",
+    category: "Water Testing",
+    thumbnail: "/blog/water-testing.png",
+    postLink: "/blogs/water-quality-testing-navigating-is10500",
   },
   {
-    title: "Condition-Based Maintenance: The Future of Reliability",
+    title: "Securing the Supply Chain: Comprehensive Food Safety Testing",
     subtitle:
-      "Explore how CBM strategies help industries shift from reactive to predictive maintenance.",
-    date: "Nov 5, 2025",
-    category: "Reliability",
-    thumbnail: "/blog3.jpg",
-    postLink: "/blogs/condition-based-maintenance-the-future-of-reliability",
+      "Understand the stringent FSSAI compliance requirements and how advanced laboratory testing protects consumer health and brand reputation.",
+    date: "Jul 10, 2026",
+    category: "Food Safety",
+    thumbnail: "/blog/food-safety.png",
+    postLink: "/blogs/fssai-compliance-and-food-safety-testing",
   },
 ];
 
@@ -214,7 +214,7 @@ const BlogSection = () => {
             viewport={{ once: true }}
             className="flex md:hidden justify-center mt-12"
           >
-            <Link href="/blog">
+            <Link href="/blogs">
               <m.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

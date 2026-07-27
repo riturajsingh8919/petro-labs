@@ -6,6 +6,7 @@ import Home from "@/components/ImageSliderMain";
 import ServicesSlider from "@/components/ServicesSlider";
 import TestimonialSection from "@/components/TestimonialSection";
 import TrainingCoursesSection from "@/components/TrainingCoursesSection";
+import AccreditationSection from "@/components/AccreditationSection";
 import React from "react";
 
 function Page() {
@@ -15,6 +16,7 @@ function Page() {
       <CoreExpertiseSection />
       <ServicesSlider />
       <AboutPetroLabsSection />
+      <AccreditationSection />
       <CounterSection />
       <TrainingCoursesSection />
       <TestimonialSection />

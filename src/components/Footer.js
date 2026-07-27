@@ -270,7 +270,11 @@ const Footer = () => {
                         Phone
                       </h5>
                       <p className="text-sm text-white/70">
-                        040-23156400, 7675043138, 39, 40, 41
+                        <a href="tel:040-23156400" className="hover:text-white transition-colors duration-300">040-23156400</a>,{" "}
+                        <a href="tel:7675043138" className="hover:text-white transition-colors duration-300">7675043138</a>,{" "}
+                        <a href="tel:7675043139" className="hover:text-white transition-colors duration-300">7675043139</a>,{" "}
+                        <a href="tel:7675043140" className="hover:text-white transition-colors duration-300">7675043140</a>,{" "}
+                        <a href="tel:7675043141" className="hover:text-white transition-colors duration-300">7675043141</a>
                       </p>
                     </div>
                   </div>

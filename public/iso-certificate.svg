@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="200" cy="200" r="180" fill="url(#bg)" stroke="#cbd5e1" stroke-width="4"/>
+  
+  <!-- Outer Gold Ring -->
+  <circle cx="200" cy="200" r="150" fill="none" stroke="url(#gold)" stroke-width="8" stroke-dasharray="20 10"/>
+  
+  <!-- Inner Blue Circle -->
+  <circle cx="200" cy="200" r="130" fill="#0f172a" />
+  
+  <!-- Text Elements -->
+  <text x="200" y="150" font-family="Arial, sans-serif" font-size="48" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">ISO</text>
+  <text x="200" y="210" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#f59e0b" text-anchor="middle">9001:2015</text>
+  <text x="200" y="250" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#94a3b8" text-anchor="middle" letter-spacing="4">CERTIFIED</text>
+  <text x="200" y="280" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#e2e8f0" text-anchor="middle">COMPANY</text>
+  
+  <!-- Decorative Stars -->
+  <path d="M120,190 l5,15 l15,0 l-12,10 l5,15 l-13,-10 l-13,10 l5,-15 l-12,-10 l15,0 z" fill="url(#gold)" />
+  <path d="M280,190 l5,15 l15,0 l-12,10 l5,15 l-13,-10 l-13,10 l5,-15 l-12,-10 l15,0 z" fill="url(#gold)" />
+</svg>
