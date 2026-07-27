@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 // Configure Outfit for headings (variable font)
 const outfit = Outfit({
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <BackToTop />
+        <WhatsAppButton />
       </body>
     </html>
   );

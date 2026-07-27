@@ -8,11 +8,18 @@ import {
   HiCurrencyRupee,
   HiCheckBadge,
 } from "react-icons/hi2";
+import Link from "next/link";
+import { useState } from "react";
+import EnrollModal from "../training/EnrollModal";
+import SyllabusModal from "../training/SyllabusModal";
 
 const loadFeatures = () =>
   import("framer-motion").then((res) => res.domAnimation);
 
 export default function EnrollmentCTA() {
+  const [isEnrollOpen, setIsEnrollOpen] = useState(false);
+  const [isSyllabusOpen, setIsSyllabusOpen] = useState(false);
+
   const steps = [
     "Choose your track & duration",
     "Email with CV + preferred dates",
@@ -25,14 +32,14 @@ export default function EnrollmentCTA() {
       icon: HiDocumentArrowDown,
       title: "Request Syllabus PDF",
       description: "Detailed course outline",
-      href: "mailto:training@petrolabs.com?subject=Syllabus%20Request",
+      onClick: () => setIsSyllabusOpen(true),
       color: "primary",
     },
     {
       icon: HiCurrencyRupee,
       title: "Get a Fee Quote",
       description: "Custom pricing for your track",
-      href: "mailto:training@petrolabs.com?subject=Fee%20Quote%20Request",
+      href: "/contact-us",
       color: "secondary",
     },
     {
@@ -103,62 +110,55 @@ export default function EnrollmentCTA() {
 
           {/* Contact Cards */}
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            <m.a
-              href="tel:7675043138"
+            <m.button
+              onClick={() => setIsEnrollOpen(true)}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="flex items-center gap-4 bg-white/15 backdrop-blur-sm rounded-2xl p-6 border-2 border-white/30 hover:bg-white/25 transition-all group"
+              className="flex items-center gap-4 bg-white/15 backdrop-blur-sm rounded-2xl p-6 border-2 border-white/30 hover:bg-white/25 transition-all group text-left w-full cursor-pointer"
             >
-              <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
                 <HiPhone className="w-8 h-8 text-white" />
               </div>
               <div className="flex-1">
                 <span className="text-white/80 text-sm block mb-1">
-                  Talk to Training Advisor
+                  Join Program
                 </span>
                 <span className="text-white text-2xl font-black">
-                  7675043138
+                  Enroll Now
                 </span>
               </div>
-            </m.a>
+            </m.button>
 
-            <m.a
-              href="mailto:training@petrolabs.com"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="flex items-center gap-4 bg-white/15 backdrop-blur-sm rounded-2xl p-6 border-2 border-white/30 hover:bg-white/25 transition-all group"
-            >
-              <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                <HiEnvelope className="w-8 h-8 text-white" />
-              </div>
-              <div className="flex-1">
-                <span className="text-white/80 text-sm block mb-1">
-                  Email Us
-                </span>
-                <span className="text-white text-lg font-black break-all">
-                  training@petrolabs.com
-                </span>
-              </div>
-            </m.a>
+            <Link href="/contact-us">
+              <m.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="flex items-center gap-4 bg-white/15 backdrop-blur-sm rounded-2xl p-6 border-2 border-white/30 hover:bg-white/25 transition-all group cursor-pointer"
+              >
+                <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <HiEnvelope className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1 text-left">
+                  <span className="text-white/80 text-sm block mb-1">
+                    Corporate / Bulk Booking
+                  </span>
+                  <span className="text-white text-lg font-black break-all">
+                    Request Quote
+                  </span>
+                </div>
+              </m.div>
+            </Link>
           </div>
 
           {/* Quick Actions */}
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
             {actions.map((action, index) => {
               const Icon = action.icon;
-              return (
-                <m.a
-                  key={index}
-                  href={action.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-xl p-5 shadow-xl hover:shadow-2xl transition-all text-center group"
-                >
+              const content = (
+                <>
                   <div
                     className={`w-12 h-12 bg-${action.color} rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform`}
                   >
@@ -168,12 +168,45 @@ export default function EnrollmentCTA() {
                     {action.title}
                   </h4>
                   <p className="text-gray-600 text-sm">{action.description}</p>
-                </m.a>
+                </>
+              );
+
+              const props = {
+                initial: { opacity: 0, y: 20 },
+                whileInView: { opacity: 1, y: 0 },
+                viewport: { once: true },
+                transition: { delay: index * 0.1 },
+                className: "bg-white rounded-xl p-5 shadow-xl hover:shadow-2xl transition-all text-center group w-full cursor-pointer",
+                onClick: action.onClick,
+              };
+
+              if (action.href) {
+                return (
+                  <Link href={action.href} key={index}>
+                    <m.div {...props}>{content}</m.div>
+                  </Link>
+                );
+              }
+
+              return (
+                <m.button key={index} {...props}>
+                  {content}
+                </m.button>
               );
             })}
           </div>
         </div>
       </section>
+
+      <EnrollModal 
+        isOpen={isEnrollOpen} 
+        onClose={() => setIsEnrollOpen(false)} 
+      />
+      
+      <SyllabusModal 
+        isOpen={isSyllabusOpen} 
+        onClose={() => setIsSyllabusOpen(false)} 
+      />
     </LazyMotion>
   );
 }

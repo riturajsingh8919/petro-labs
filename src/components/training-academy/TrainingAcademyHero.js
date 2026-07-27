@@ -8,11 +8,17 @@ import {
   HiBriefcase,
 } from "react-icons/hi2";
 import Link from "next/link";
+import { useState } from "react";
+import EnrollModal from "../training/EnrollModal";
+import SyllabusModal from "../training/SyllabusModal";
 
 const loadFeatures = () =>
   import("framer-motion").then((res) => res.domAnimation);
 
 export default function TrainingAcademyHero() {
+  const [isEnrollOpen, setIsEnrollOpen] = useState(false);
+  const [isSyllabusOpen, setIsSyllabusOpen] = useState(false);
+
   const stats = [
     { icon: HiBeaker, value: "10+", label: "Live Instruments" },
     { icon: HiShieldCheck, value: "NABL", label: "Accredited Lab" },
@@ -63,18 +69,18 @@ export default function TrainingAcademyHero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 justify-center mb-12">
-              <a
-                href="tel:7675043138"
-                className="px-8 py-4 bg-white text-primary rounded-lg font-black text-lg hover:bg-white/90 transition-all shadow-xl hover:scale-105"
+              <button
+                onClick={() => setIsEnrollOpen(true)}
+                className="px-8 py-4 bg-white text-primary rounded-lg font-black text-lg hover:bg-white/90 transition-all shadow-xl hover:scale-105 cursor-pointer"
               >
                 Enroll Now
-              </a>
-              <a
-                href="mailto:training@petrolabs.com"
-                className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg font-bold text-lg hover:bg-white/20 transition-all border-2 border-white/30"
+              </button>
+              <button
+                onClick={() => setIsSyllabusOpen(true)}
+                className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg font-bold text-lg hover:bg-white/20 transition-all border-2 border-white/30 cursor-pointer"
               >
                 Request Syllabus
-              </a>
+              </button>
               <Link
                 href="#training-tracks"
                 className="px-8 py-4 bg-transparent text-white rounded-lg font-bold text-lg hover:bg-white/10 transition-all border-2 border-white/30"
@@ -109,6 +115,16 @@ export default function TrainingAcademyHero() {
           </m.div>
         </div>
       </section>
+
+      <EnrollModal 
+        isOpen={isEnrollOpen} 
+        onClose={() => setIsEnrollOpen(false)} 
+      />
+      
+      <SyllabusModal 
+        isOpen={isSyllabusOpen} 
+        onClose={() => setIsSyllabusOpen(false)} 
+      />
     </LazyMotion>
   );
 }

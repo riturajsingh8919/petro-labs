@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { LazyMotion, m } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,6 +27,8 @@ import {
   HiMagnifyingGlass,
 } from "react-icons/hi2";
 import { MdOilBarrel } from "react-icons/md";
+import EnrollModal from "./EnrollModal";
+import SyllabusModal from "./SyllabusModal";
 
 const loadFeatures = () =>
   import("framer-motion").then((res) => res.domAnimation);
@@ -49,6 +51,9 @@ const iconMap = {
 };
 
 export default function TrainingCourseClient({ courseData, allCourses }) {
+  const [isEnrollOpen, setIsEnrollOpen] = useState(false);
+  const [isSyllabusOpen, setIsSyllabusOpen] = useState(false);
+
   const relatedCourses = useMemo(() => {
     if (!courseData || !allCourses) return [];
 
@@ -193,18 +198,18 @@ export default function TrainingCourseClient({ courseData, allCourses }) {
                   </div>
 
                   <div className="flex flex-wrap gap-3 pt-2">
-                    <a
-                      href="tel:7675043138"
-                      className="px-6 py-3 bg-white text-gray-900 rounded-lg font-bold hover:bg-white/90 transition-all shadow-xl hover:scale-105"
+                    <button
+                      onClick={() => setIsEnrollOpen(true)}
+                      className="px-6 py-3 bg-white text-gray-900 rounded-lg font-bold hover:bg-white/90 transition-all shadow-xl hover:scale-105 cursor-pointer"
                     >
                       Enroll Now
-                    </a>
-                    <a
-                      href="mailto:training@petrolabs.com"
-                      className="px-6 py-3 bg-white/10 backdrop-blur-sm text-white rounded-lg font-bold hover:bg-white/20 transition-all border-2 border-white/30"
+                    </button>
+                    <button
+                      onClick={() => setIsSyllabusOpen(true)}
+                      className="px-6 py-3 bg-white/10 backdrop-blur-sm text-white rounded-lg font-bold hover:bg-white/20 transition-all border-2 border-white/30 cursor-pointer"
                     >
-                      Get Brochure
-                    </a>
+                      Request Syllabus
+                    </button>
                   </div>
                 </div>
 
@@ -391,41 +396,41 @@ export default function TrainingCourseClient({ courseData, allCourses }) {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <a
-                    href="tel:7675043138"
-                    className="flex items-center gap-3 bg-white/15 backdrop-blur-sm rounded-xl p-4 border-2 border-white/30 hover:bg-white/25 transition-all group"
+                  <button
+                    onClick={() => setIsEnrollOpen(true)}
+                    className="flex items-center gap-3 bg-white/15 backdrop-blur-sm rounded-xl p-4 border-2 border-white/30 hover:bg-white/25 transition-all group cursor-pointer text-left w-full"
                   >
-                    <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
                       <HiPhone className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1 text-left">
                       <span className="text-white/80 text-xs block">
-                        Call to Enroll
+                        Join Program
                       </span>
                       <span className="text-white text-lg font-black">
-                        7675043138
+                        Enroll Now
                       </span>
                     </div>
                     <HiArrowRight className="w-5 h-5 text-white/50 group-hover:text-white group-hover:translate-x-1 transition-all" />
-                  </a>
+                  </button>
 
-                  <a
-                    href="mailto:training@petrolabs.com"
+                  <Link
+                    href="/contact-us"
                     className="flex items-center gap-3 bg-white/15 backdrop-blur-sm rounded-xl p-4 border-2 border-white/30 hover:bg-white/25 transition-all group"
                   >
-                    <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
                       <HiEnvelope className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1 text-left">
                       <span className="text-white/80 text-xs block">
-                        Email Us
+                        Corporate / Bulk Booking
                       </span>
                       <span className="text-white text-sm font-black break-all">
-                        training@petrolabs.com
+                        Request Quote
                       </span>
                     </div>
                     <HiArrowRight className="w-5 h-5 text-white/50 group-hover:text-white group-hover:translate-x-1 transition-all" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </m.div>
@@ -468,7 +473,7 @@ export default function TrainingCourseClient({ courseData, allCourses }) {
                         href={`/training/${related.slug}`}
                         className="block bg-white rounded-xl overflow-hidden shadow-md border-2 border-gray-100 hover:border-primary hover:shadow-xl transition-all h-full group"
                       >
-                        <div className="relative h-70">
+                        <div className="relative h-64 overflow-hidden">
                           <Image
                             src={related.image}
                             alt={related.title}
@@ -529,6 +534,19 @@ export default function TrainingCourseClient({ courseData, allCourses }) {
           </section>
         )}
       </div>
+
+      {/* Modals */}
+      <EnrollModal 
+        isOpen={isEnrollOpen} 
+        onClose={() => setIsEnrollOpen(false)} 
+        initialCourse={courseData.title}
+      />
+      
+      <SyllabusModal 
+        isOpen={isSyllabusOpen} 
+        onClose={() => setIsSyllabusOpen(false)} 
+        initialCourse={courseData.title}
+      />
     </LazyMotion>
   );
 }

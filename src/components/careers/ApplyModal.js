@@ -23,6 +23,8 @@ export default function ApplyModal({ isOpen, onClose, job }) {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [fileName, setFileName] = useState("");
 
   useEffect(() => {
@@ -36,22 +38,50 @@ export default function ApplyModal({ isOpen, onClose, job }) {
     };
   }, [isOpen]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        experience: "",
-        resume: null,
-        coverLetter: "",
+    setLoading(true);
+    setError(null);
+
+    const data = new FormData();
+    data.append("name", formData.name);
+    data.append("email", formData.email);
+    data.append("phone", formData.phone);
+    data.append("experience", formData.experience);
+    data.append("coverLetter", formData.coverLetter);
+    data.append("resume", formData.resume);
+    data.append("jobTitle", job?.title || "");
+
+    try {
+      const response = await fetch("/api/apply", {
+        method: "POST",
+        body: data,
       });
-      setFileName("");
-      onClose();
-    }, 2000);
+
+      if (response.ok) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            experience: "",
+            resume: null,
+            coverLetter: "",
+          });
+          setFileName("");
+          onClose();
+        }, 3000);
+      } else {
+        const resData = await response.json();
+        setError(resData.error || "Something went wrong.");
+      }
+    } catch (err) {
+      setError("Failed to submit application. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -246,6 +276,11 @@ export default function ApplyModal({ isOpen, onClose, job }) {
 
                     {/* Footer - Fixed */}
                     <div className="p-6 border-t border-gray-100 bg-gray-50 shrink-0">
+                      {error && (
+                        <p className="text-red-500 text-sm font-semibold mb-3 text-center">
+                          {error}
+                        </p>
+                      )}
                       <div className="flex flex-col sm:flex-row gap-3">
                         <button
                           type="button"
@@ -256,12 +291,42 @@ export default function ApplyModal({ isOpen, onClose, job }) {
                         </button>
                         <m.button
                           type="submit"
-                          disabled={submitted}
-                          whileHover={{ scale: submitted ? 1 : 1.02 }}
-                          whileTap={{ scale: submitted ? 1 : 0.98 }}
-                          className="flex-1 bg-primary text-white py-3 px-6 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors disabled:opacity-70"
+                          disabled={loading || submitted}
+                          whileHover={{
+                            scale: loading || submitted ? 1 : 1.02,
+                          }}
+                          whileTap={{ scale: loading || submitted ? 1 : 0.98 }}
+                          className={`flex-1 text-white py-3 px-6 rounded-xl font-bold flex items-center justify-center gap-2 transition-colors disabled:opacity-70 cursor-pointer ${
+                            loading
+                              ? "bg-gray-400 cursor-not-allowed"
+                              : "bg-primary hover:bg-primary/90"
+                          }`}
                         >
-                          {submitted ? (
+                          {loading ? (
+                            <>
+                              <svg
+                                className="animate-spin h-5 w-5 text-white"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                              >
+                                <circle
+                                  className="opacity-25"
+                                  cx="12"
+                                  cy="12"
+                                  r="10"
+                                  stroke="currentColor"
+                                  strokeWidth="4"
+                                ></circle>
+                                <path
+                                  className="opacity-75"
+                                  fill="currentColor"
+                                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                ></path>
+                              </svg>
+                              Sending...
+                            </>
+                          ) : submitted ? (
                             <>
                               <HiCheckCircle className="w-5 h-5" />
                               Submitted!
