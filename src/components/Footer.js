@@ -339,11 +339,11 @@ const Footer = () => {
                   </span>
                 </Link>
                 <span className="text-white/30">•</span>
-                <Link href="/sitemap">
+                <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer">
                   <span className="text-white/60 hover:text-white transition-colors duration-300 cursor-pointer">
                     Sitemap
                   </span>
-                </Link>
+                </a>
               </m.div>
             </div>
           </div>
