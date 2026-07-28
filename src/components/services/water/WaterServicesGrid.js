@@ -561,7 +561,7 @@ export default function WaterServicesGrid() {
                 </a>
 
                 <a
-                  href="mailto:info@petrolabs.com"
+                  href="mailto:info@petrolabsindia.com"
                   className="flex items-center justify-center gap-3 px-8 py-5 bg-white/10 backdrop-blur-sm border-2 border-white/20 hover:bg-white/20 text-white font-bold rounded-xl transition-all"
                 >
                   <span className="text-2xl">
@@ -569,7 +569,7 @@ export default function WaterServicesGrid() {
                   </span>
                   <div className="text-left">
                     <div className="text-xs text-white/70">Email us</div>
-                    <div className="text-sm">info@petrolabs.com</div>
+                    <div className="text-sm">info@petrolabsindia.com</div>
                   </div>
                 </a>
               </div>

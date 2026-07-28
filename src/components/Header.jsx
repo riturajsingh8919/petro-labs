@@ -184,6 +184,15 @@ export default function Header() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setOpenDropdown(null);
+    setIsMobileMenuOpen(false);
+    setOpenMobileSubmenu(null);
+    setOpenMobileCategory(null);
+  }
+
   const isActive = (href) =>
     pathname === href || pathname.startsWith(href + "/");
 

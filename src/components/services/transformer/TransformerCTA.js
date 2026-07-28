@@ -111,7 +111,7 @@ export default function TransformerCTA() {
                 </m.a>
 
                 <m.a
-                  href="mailto:info@petrolabs.com"
+                  href="mailto:info@petrolabsindia.com"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -128,7 +128,7 @@ export default function TransformerCTA() {
                         Email us
                       </span>
                       <span className="text-white text-lg font-black break-all">
-                        info@petrolabs.com
+                        info@petrolabsindia.com
                       </span>
                     </div>
                     <HiArrowRight className="w-6 h-6 text-white/40 group-hover:text-accent1 group-hover:translate-x-1 transition-all" />
