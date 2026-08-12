@@ -15,7 +15,7 @@ const BLOG_POSTS = [
       "Discover how rigorous petroleum analysis prevents catastrophic equipment failures, ensures regulatory compliance, and extends the lifecycle of machinery.",
     date: "Jul 20, 2026",
     category: "Petroleum Testing",
-    thumbnail: "/blog/petroleum-testing.png",
+    thumbnail: "/blog/petroleum-testing.webp",
     postLink: "/blogs/petroleum-testing-ensuring-quality-and-compliance",
   },
   {
@@ -24,7 +24,7 @@ const BLOG_POSTS = [
       "A deep dive into the complexities of water quality testing in India. Learn the differences between potable water standards and stringent industrial requirements.",
     date: "Jul 15, 2026",
     category: "Water Testing",
-    thumbnail: "/blog/water-testing.png",
+    thumbnail: "/blog/water-testing.webp",
     postLink: "/blogs/water-quality-testing-navigating-is10500",
   },
   {
@@ -33,7 +33,7 @@ const BLOG_POSTS = [
       "Understand the stringent FSSAI compliance requirements and how advanced laboratory testing protects consumer health and brand reputation.",
     date: "Jul 10, 2026",
     category: "Food Safety",
-    thumbnail: "/blog/food-safety.png",
+    thumbnail: "/blog/food-safety.webp",
     postLink: "/blogs/fssai-compliance-and-food-safety-testing",
   },
 ];
@@ -96,7 +96,7 @@ const BlogSection = () => {
                     alt={BLOG_POSTS[0].title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    priority
+                    loading="lazy"
                     sizes="(max-width: 1024px) 100vw, 58vw"
                   />
 

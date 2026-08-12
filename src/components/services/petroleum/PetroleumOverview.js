@@ -61,7 +61,7 @@ export default function PetroleumOverview() {
             className="relative h-[300px] rounded-2xl overflow-hidden shadow-xl"
           >
             <Image
-              src="/services/petroleum-lab.png"
+              src="/services/petroleum-lab.webp"
               alt="Modern Testing Laboratory"
               fill
               className="object-cover"

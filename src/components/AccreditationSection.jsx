@@ -10,7 +10,7 @@ const AccreditationSection = () => {
       title: "NABL Accredited",
       description:
         "Our laboratory operations are strictly compliant with ISO/IEC 17025 standards, accredited by the National Accreditation Board for Testing and Calibration Laboratories (NABL), ensuring the highest degree of accuracy, reliability, and global acceptance of our test results.",
-      image: "/nabl.png",
+      image: "/nabl.webp",
       links: [
         { label: "View NABL Certificate", href: "/NABL.pdf", primary: false, icon: HiOutlineDocumentSearch },
         { label: "Download Scope", href: "/NABL.pdf", primary: true, icon: HiOutlineDownload },
@@ -22,7 +22,7 @@ const AccreditationSection = () => {
       title: "ISO Certified (9001, 14001, 45001)",
       description:
         "PetroLabs is an ISO 9001, 14001, and 45001 certified organization, reflecting our unwavering commitment to maintaining a robust Quality, Environmental, and Occupational Health & Safety Management System. We guarantee operational excellence.",
-      image: "/iso.png",
+      image: "/iso.webp",
       links: [
         { label: "ISO 9001", href: "/iso-9001-certificate.pdf", primary: false, icon: HiOutlineDocumentSearch },
         { label: "ISO 14001", href: "/iso-14001-certificate.pdf", primary: false, icon: HiOutlineDocumentSearch },

@@ -1,13 +1,25 @@
-import AboutPetroLabsSection from "@/components/AboutPetroLabsSection";
-import BlogSection from "@/components/BlogSection";
-import CoreExpertiseSection from "@/components/CoreExpertiseSection";
-import CounterSection from "@/components/CounterSection";
+import dynamic from "next/dynamic";
 import Home from "@/components/ImageSliderMain";
-import ServicesSlider from "@/components/ServicesSlider";
-import TestimonialSection from "@/components/TestimonialSection";
-import TrainingCoursesSection from "@/components/TrainingCoursesSection";
-import AccreditationSection from "@/components/AccreditationSection";
-import React from "react";
+
+// Below-the-fold sections load after the hero — keeps first paint tiny
+const CoreExpertiseSection = dynamic(
+  () => import("@/components/CoreExpertiseSection"),
+);
+const ServicesSlider = dynamic(() => import("@/components/ServicesSlider"));
+const AboutPetroLabsSection = dynamic(
+  () => import("@/components/AboutPetroLabsSection"),
+);
+const AccreditationSection = dynamic(
+  () => import("@/components/AccreditationSection"),
+);
+const CounterSection = dynamic(() => import("@/components/CounterSection"));
+const TrainingCoursesSection = dynamic(
+  () => import("@/components/TrainingCoursesSection"),
+);
+const TestimonialSection = dynamic(
+  () => import("@/components/TestimonialSection"),
+);
+const BlogSection = dynamic(() => import("@/components/BlogSection"));
 
 export const metadata = {
   title: "PetroLabs India Pvt. Ltd.",

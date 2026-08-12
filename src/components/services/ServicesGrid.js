@@ -23,7 +23,7 @@ const ServicesGrid = () => {
         "Performance Optimization",
         "Regulatory Compliance",
       ],
-      image: "/services/1.jpg",
+      image: "/services/1.webp",
     },
     {
       title: "Transformer Oil Testing",
@@ -35,7 +35,7 @@ const ServicesGrid = () => {
         "Moisture Analysis",
         "Contamination Detection",
       ],
-      image: "/services/2.jpg",
+      image: "/services/2.webp",
     },
     {
       title: "Water Testing Services",
@@ -47,7 +47,7 @@ const ServicesGrid = () => {
         "Industrial Standards",
         "Environmental Monitoring",
       ],
-      image: "/services/3.jpg",
+      image: "/services/3.webp",
     },
     {
       title: "Coolant & DEF Testing",
@@ -55,7 +55,7 @@ const ServicesGrid = () => {
       description:
         "Engine coolant and diesel exhaust fluid testing for automotive and industrial systems.",
       benefits: ["Freeze Point Analysis", "pH Balance", "Contamination Check"],
-      image: "/services/4.jpg",
+      image: "/services/4.webp",
     },
     {
       title: "RoHS & ELC Certification",
@@ -63,7 +63,7 @@ const ServicesGrid = () => {
       description:
         "Regulatory compliance testing for hazardous substances and product safety certification.",
       benefits: ["RoHS Compliance", "Heavy Metal Testing", "ELC Directives"],
-      image: "/services/5.jpg",
+      image: "/services/5.webp",
     },
     {
       title: "Chemical & Mechanical Testing",
@@ -75,7 +75,7 @@ const ServicesGrid = () => {
         "Tensile Testing",
         "Hardness Evaluation",
       ],
-      image: "/services/6.jpg",
+      image: "/services/6.webp",
     },
     {
       title: "Metallography Testing",
@@ -83,7 +83,7 @@ const ServicesGrid = () => {
       description:
         "Microstructure analysis and failure investigation of metallic materials.",
       benefits: ["Grain Structure", "Phase Analysis", "Defect Detection"],
-      image: "/services/7.jpg",
+      image: "/services/7.webp",
     },
     {
       title: "Food & Agriculture Testing",
@@ -95,7 +95,7 @@ const ServicesGrid = () => {
         "Nutritional Analysis",
         "Microbial Testing",
       ],
-      image: "/services/8.jpg",
+      image: "/services/8.webp",
     },
     {
       title: "Environmental Testing",
@@ -103,7 +103,7 @@ const ServicesGrid = () => {
       description:
         "Comprehensive environmental monitoring and pollution assessment services.",
       benefits: ["Air Quality", "Soil Analysis", "Emissions Testing"],
-      image: "/services/9.jpg",
+      image: "/services/9.webp",
     },
   ];
 

@@ -13,7 +13,7 @@ export default function AirHero() {
       <div className="relative overflow-hidden mb-14">
         <div className="relative h-[400px] md:h-[500px]">
           <Image
-            src="/services/air-hero.png"
+            src="/services/air-hero.webp"
             alt="Air Quality Testing Services"
             fill
             className="object-cover"

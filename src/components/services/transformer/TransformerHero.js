@@ -12,7 +12,7 @@ export default function TransformerHero() {
       <div className="relative overflow-hidden mb-14">
         <div className="relative h-[350px] md:h-[450px]">
           <Image
-            src="/services/transformer-hero.png"
+            src="/services/transformer-hero.webp"
             alt="Transformer Oil Testing"
             fill
             className="object-cover"

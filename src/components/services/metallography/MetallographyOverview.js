@@ -64,7 +64,7 @@ export default function MetallographyOverview() {
             className="relative h-[550px] rounded-2xl overflow-hidden shadow-2xl"
           >
             <Image
-              src="/services/metallography-lab.png"
+              src="/services/metallography-lab.webp"
               alt="Metallography Laboratory Equipment"
               fill
               className="object-cover"

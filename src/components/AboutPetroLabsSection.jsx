@@ -145,11 +145,11 @@ const AboutPetroLabsSection = () => {
             {/* Image with accent border */}
             <div className="relative w-full h-[70vh] lg:h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
               <Image
-                src="/about.jpg"
+                src="/about.webp"
                 alt="PetroLabs Laboratory"
                 fill
-                priority
-                quality={100}
+                loading="lazy"
+                quality={75}
                 className="object-cover w-full h-full rounded-3xl group-hover:scale-110 transition-transform duration-700"
               />
 

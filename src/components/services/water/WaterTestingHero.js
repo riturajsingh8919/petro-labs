@@ -13,7 +13,7 @@ export default function WaterTestingHero() {
       <div className="relative overflow-hidden mb-12">
         <div className="relative h-[400px] md:h-[500px]">
           <Image
-            src="/services/water-hero.png"
+            src="/services/water-hero.webp"
             alt="Water Testing Laboratory"
             fill
             className="object-cover"

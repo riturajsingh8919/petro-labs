@@ -1,22 +1,25 @@
 import { Inter, Outfit } from "next/font/google";
+import dynamic from "next/dynamic";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import BackToTop from "@/components/BackToTop";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
+const BackToTop = dynamic(() => import("@/components/BackToTop"));
+const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"));
 
 // Configure Outfit for headings (variable font)
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
   display: "swap",
+  preload: true,
 });
 
-// Configure Inter for body text (variable font)
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
+  preload: true,
 });
 
 export const metadata = {
@@ -86,6 +89,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${outfit.variable} ${inter.variable}`}>
+      <head>
+        <link rel="preload" as="image" href="/slide-1-a.webp" type="image/webp" />
+        <link rel="preload" as="image" href="/logo-new.webp" type="image/webp" />
+      </head>
       <body>
         <Header />
         {children}

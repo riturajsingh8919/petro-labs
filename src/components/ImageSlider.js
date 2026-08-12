@@ -6,47 +6,60 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const ImageSlider = memo(
-  ({ images, onActiveChange, activeIndex, onCycleComplete, priority = false }) => {
+  ({
+    images,
+    onActiveChange,
+    activeIndex,
+    onCycleComplete,
+    priority = false,
+    autoplay = true,
+  }) => {
     const [localActiveIndex, setLocalActiveIndex] = useState(activeIndex);
     const timerRef = useRef(null);
+    const onActiveChangeRef = useRef(onActiveChange);
+    const onCycleCompleteRef = useRef(onCycleComplete);
+
+    // Keep latest callbacks without restarting the autoplay timer
+    useEffect(() => {
+      onActiveChangeRef.current = onActiveChange;
+      onCycleCompleteRef.current = onCycleComplete;
+    });
 
     useEffect(() => {
       setLocalActiveIndex(activeIndex);
     }, [activeIndex]);
 
-    // Auto-advance image slider
+    // Auto-advance — stable deps so Windows browsers aren't stuck in a load loop
     useEffect(() => {
-      timerRef.current = setTimeout(() => {
-        const nextIndex =
-          localActiveIndex === images.length - 1 ? 0 : localActiveIndex + 1;
-        setLocalActiveIndex(nextIndex);
-        onActiveChange(nextIndex);
+      if (!autoplay) return;
 
-        // Notify parent if we completed a full cycle
-        if (nextIndex === 0) {
-          onCycleComplete?.();
+      timerRef.current = setTimeout(() => {
+        const atLast = localActiveIndex === images.length - 1;
+
+        if (atLast) {
+          // Finished this set → advance main slide (parent resets activeIndex to 0)
+          onCycleCompleteRef.current?.();
+          return;
         }
-      }, 2000); // 2 seconds per image
+
+        const nextIndex = localActiveIndex + 1;
+        setLocalActiveIndex(nextIndex);
+        onActiveChangeRef.current(nextIndex);
+      }, 2000);
 
       return () => {
-        if (timerRef.current) {
-          clearTimeout(timerRef.current);
-        }
+        if (timerRef.current) clearTimeout(timerRef.current);
       };
-    }, [localActiveIndex, images.length, onActiveChange, onCycleComplete]);
+    }, [localActiveIndex, images.length, autoplay]);
 
     const handleImageClick = (index) => {
-      // Clear existing timer when manually clicking
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
-      }
+      if (timerRef.current) clearTimeout(timerRef.current);
       setLocalActiveIndex(index);
-      onActiveChange(index);
+      onActiveChangeRef.current(index);
     };
 
     return (
       <div className="relative">
-        {/* Main Accordion Slider */}
         <div className="flex gap-3 h-[280px] sm:h-[350px] md:h-[450px] lg:h-[500px]">
           {images.map((image, index) => {
             const isActive = localActiveIndex === index;
@@ -61,12 +74,8 @@ const ImageSlider = memo(
                 style={{
                   transition: "flex 0.6s cubic-bezier(0.22, 1, 0.36, 1)",
                 }}
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={false}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 0.4,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
                 whileHover={{
                   scale: isActive ? 1 : 1.02,
                   transition: { duration: 0.2 },
@@ -77,15 +86,13 @@ const ImageSlider = memo(
                   alt={image.alt}
                   fill
                   className="object-cover"
-                  priority={priority}
-                  loading={priority ? "eager" : "lazy"}
+                  priority={priority && index < 3}
+                  loading={priority && index < 3 ? "eager" : "lazy"}
                   sizes="(max-width: 768px) 90vw, (max-width: 1200px) 40vw, 28vw"
                   quality={80}
-                  // Already compressed WebP — skip runtime /_next/image work on VPS
                   unoptimized
                 />
 
-                {/* Active Border */}
                 {isActive && (
                   <motion.div
                     layoutId="activeBorder"
@@ -94,62 +101,44 @@ const ImageSlider = memo(
                   />
                 )}
 
-                {/* Overlay for Non-Active */}
                 {!isActive && (
-                  <motion.div
-                    initial={{ opacity: 0.6 }}
-                    animate={{ opacity: 0.6 }}
-                    className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent"
-                    style={{ willChange: "opacity" }}
-                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
                 )}
 
-                {/* Glow Effect */}
                 {isActive && (
-                  <div
-                    className="absolute -inset-1 bg-linear-to-r from-primary via-accent1 to-secondary rounded-2xl blur-xl -z-10 opacity-70"
-                    style={{ willChange: "transform" }}
-                  />
+                  <div className="absolute -inset-1 bg-linear-to-r from-primary via-accent1 to-secondary rounded-2xl blur-xl -z-10 opacity-70" />
                 )}
 
-                {/* Active Label */}
                 {isActive && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-4 left-4 bg-white backdrop-blur-sm px-4 py-2 rounded-full z-10"
-                  >
+                  <div className="absolute top-4 left-4 bg-white backdrop-blur-sm px-4 py-2 rounded-full z-10">
                     <span className="text-primary text-xs font-bold uppercase tracking-wider">
                       Active
                     </span>
-                  </motion.div>
+                  </div>
                 )}
               </motion.div>
             );
           })}
         </div>
 
-        {/* Navigation Dots */}
         <div className="flex justify-center gap-2 mt-5">
           {images.map((_, index) => (
-            <motion.button
+            <button
               key={index}
+              type="button"
               onClick={() => handleImageClick(index)}
               className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                 localActiveIndex === index
                   ? "w-8 bg-linear-to-r from-primary to-accent1"
                   : "w-2 bg-gray-300 hover:bg-gray-400"
               }`}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
               aria-label={`Select image ${index + 1}`}
             />
           ))}
         </div>
       </div>
     );
-  }
+  },
 );
 
 ImageSlider.displayName = "ImageSlider";

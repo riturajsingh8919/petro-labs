@@ -13,7 +13,7 @@ export default function MechanicalHero() {
       <div className="relative overflow-hidden mb-12">
         <div className="relative h-[400px] md:h-[500px]">
           <Image
-            src="/services/mechanical-hero.png"
+            src="/services/mechanical-hero.webp"
             alt="Mechanical and Chemical Testing Laboratory"
             fill
             className="object-cover"

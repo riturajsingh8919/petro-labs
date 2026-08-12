@@ -13,7 +13,7 @@ export default function FoodHero() {
       <div className="relative overflow-hidden mb-12">
         <div className="relative h-[400px] md:h-[500px]">
           <Image
-            src="/services/food-hero.png"
+            src="/services/food-hero.webp"
             alt="Food Testing Laboratory Services"
             fill
             className="object-cover"

@@ -226,7 +226,7 @@ export default function TrainingCourseClient({ courseData, allCourses }) {
                     fill
                     className="object-cover"
                     priority
-                    quality={100}
+                    quality={75}
                   />
                 </m.div>
               </div>
@@ -478,7 +478,7 @@ export default function TrainingCourseClient({ courseData, allCourses }) {
                             src={related.image}
                             alt={related.title}
                             fill
-                            quality={100}
+                            quality={75}
                             className="object-cover group-hover:scale-105 transition-transform duration-300"
                           />
                           <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent" />

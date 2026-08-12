@@ -28,7 +28,7 @@ export default function WhyChoose() {
             className="relative h-[470px] rounded-2xl overflow-hidden shadow-xl order-2 lg:order-1"
           >
             <Image
-              src="/services/petroleum-equipment1.png"
+              src="/services/petroleum-equipment1.webp"
               alt="Advanced Testing Equipment"
               fill
               className="object-cover"

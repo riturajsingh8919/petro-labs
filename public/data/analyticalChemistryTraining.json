@@ -11,7 +11,7 @@
       "duration": "5 Days",
       "level": "Intermediate to Advanced",
       "price": "Contact for Pricing",
-      "image": "/training/gc-ms.png",
+      "image": "/training/gc-ms.webp",
       "icon": "HiBeaker",
       "color": "primary",
       "modules": [
@@ -47,7 +47,7 @@
       "duration": "4 Days",
       "level": "Beginner to Intermediate",
       "price": "Contact for Pricing",
-      "image": "/training/icp-oes.png",
+      "image": "/training/icp-oes.webp",
       "icon": "HiLightBulb",
       "color": "secondary",
       "modules": [
@@ -82,7 +82,7 @@
       "duration": "5 Days",
       "level": "Beginner to Advanced",
       "price": "Contact for Pricing",
-      "image": "/training/hplc.png",
+      "image": "/training/hplc.webp",
       "icon": "HiChartBar",
       "color": "accent1",
       "modules": [
@@ -117,7 +117,7 @@
       "duration": "4 Days",
       "level": "Beginner to Intermediate",
       "price": "Contact for Pricing",
-      "image": "/training/aas.png",
+      "image": "/training/aas.webp",
       "icon": "HiCubeTransparent",
       "color": "accent2",
       "modules": [
@@ -152,7 +152,7 @@
       "duration": "3 Days",
       "level": "Beginner to Intermediate",
       "price": "Contact for Pricing",
-      "image": "/training/gc.png",
+      "image": "/training/gc.webp",
       "icon": "HiFire",
       "color": "primary",
       "modules": [
@@ -187,7 +187,7 @@
       "duration": "6 Days",
       "level": "Beginner to Advanced",
       "price": "Contact for Pricing",
-      "image": "/training/chemistry.png",
+      "image": "/training/chemistry.webp",
       "icon": "HiCommandLine",
       "color": "secondary",
       "modules": [

@@ -38,7 +38,7 @@ export default function TransformerOverview() {
             className="relative h-[300px] rounded-2xl overflow-hidden shadow-xl"
           >
             <Image
-              src="/services/transformer-lab.png"
+              src="/services/transformer-lab.webp"
               alt="Transformer Oil Testing Laboratory"
               fill
               className="object-cover"

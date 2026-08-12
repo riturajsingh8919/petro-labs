@@ -1,11 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  // Assets are already compressed WebP — skip runtime sharp work on the VPS
   images: {
-    // add 100 alongside 75
-    qualities: [100, 75],
+    unoptimized: true,
+    qualities: [75, 80, 100],
   },
   reactCompiler: true,
+  // Faster production responses behind Docker / reverse proxy
+  poweredByHeader: false,
+  compress: true,
 };
 
 export default nextConfig;

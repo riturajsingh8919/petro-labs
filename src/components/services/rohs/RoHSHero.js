@@ -13,7 +13,7 @@ export default function RoHSHero() {
       <div className="relative overflow-hidden mb-14">
         <div className="relative h-[400px] md:h-[500px]">
           <Image
-            src="/services/rohs-hero1.png"
+            src="/services/rohs-hero1.webp"
             alt="RoHS and ELV Certification Laboratory"
             fill
             className="object-cover"

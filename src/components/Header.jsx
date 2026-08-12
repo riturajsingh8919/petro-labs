@@ -246,12 +246,13 @@ export default function Header() {
                 className="relative w-32 h-auto lg:w-56 lg:h-auto"
               >
                 <Image
-                  src="/logo-new.png"
+                  src="/logo-new.webp"
                   alt="PetroLabs"
-                  width={4157}
-                  height={1390}
-                  quality={100}
-                  className="object-contain"
+                  width={224}
+                  height={75}
+                  priority
+                  quality={75}
+                  className="object-contain w-full h-auto"
                 />
               </motion.div>
             </Link>

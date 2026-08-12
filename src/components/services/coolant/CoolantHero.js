@@ -13,7 +13,7 @@ export default function CoolantHero() {
       <div className="relative overflow-hidden mb-14">
         <div className="relative h-[400px] md:h-[500px]">
           <Image
-            src="/services/coolant-hero.png"
+            src="/services/coolant-hero.webp"
             alt="Coolant and DEF Testing Laboratory"
             fill
             className="object-cover"

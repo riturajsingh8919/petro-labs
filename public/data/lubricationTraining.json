@@ -11,7 +11,7 @@
       "duration": "5 Days",
       "level": "Intermediate to Advanced",
       "price": "Contact for Pricing",
-      "image": "/training/oil-analysis.png",
+      "image": "/training/oil-analysis.webp",
       "icon": "HiCog",
       "color": "primary",
       "modules": [
@@ -46,7 +46,7 @@
       "duration": "4 Days",
       "level": "Intermediate",
       "price": "Contact for Pricing",
-      "image": "/training/cbm.png",
+      "image": "/training/cbm.webp",
       "icon": "HiWrenchScrewdriver",
       "color": "secondary",
       "modules": [
@@ -80,7 +80,7 @@
       "duration": "3 Days",
       "level": "Beginner",
       "price": "Contact for Pricing",
-      "image": "/training/mlt-1.png",
+      "image": "/training/mlt-1.webp",
       "icon": "MdOilBarrel",
       "color": "accent1",
       "modules": [
@@ -115,7 +115,7 @@
       "duration": "4 Days",
       "level": "Intermediate",
       "price": "Contact for Pricing",
-      "image": "/training/mlt-2.png",
+      "image": "/training/mlt-2.webp",
       "icon": "HiBolt",
       "color": "accent2",
       "modules": [
@@ -150,7 +150,7 @@
       "duration": "5 Days",
       "level": "Advanced",
       "price": "Contact for Pricing",
-      "image": "/training/mle.png",
+      "image": "/training/mle.webp",
       "icon": "HiCpuChip",
       "color": "primary",
       "modules": [
@@ -185,7 +185,7 @@
       "duration": "4 Days",
       "level": "Intermediate",
       "price": "Contact for Pricing",
-      "image": "/training/mla-2.png",
+      "image": "/training/mla-2.webp",
       "icon": "HiMagnifyingGlass",
       "color": "secondary",
       "modules": [
@@ -220,7 +220,7 @@
       "duration": "5 Days",
       "level": "Advanced",
       "price": "Contact for Pricing",
-      "image": "/training/mla-3.png",
+      "image": "/training/mla-3.webp",
       "icon": "HiShieldCheck",
       "color": "accent1",
       "modules": [

@@ -23,7 +23,7 @@ export const metadata = {
       "Hands-on training on real instruments. NABL-accredited labs. Job-ready programs for QC/QA analyst roles.",
     type: "website",
     url: "/training-academy",
-    images: ["/training/academy-hero.jpg"],
+    images: ["/training/1.webp"],
   },
   alternates: {
     canonical: "/training-academy",

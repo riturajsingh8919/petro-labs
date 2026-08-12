@@ -13,7 +13,7 @@ export default function MetallographyHero() {
       <div className="relative overflow-hidden mb-14">
         <div className="relative h-[400px] md:h-[500px]">
           <Image
-            src="/services/metallography-hero.png"
+            src="/services/metallography-hero.webp"
             alt="Metallography Testing Laboratory"
             fill
             className="object-cover"

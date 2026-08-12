@@ -58,7 +58,7 @@ export default function CoolantOverview() {
             className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl"
           >
             <Image
-              src="/services/coolant-lab.png"
+              src="/services/coolant-lab.webp"
               alt="Coolant Testing Laboratory"
               fill
               className="object-cover"

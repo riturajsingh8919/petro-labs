@@ -67,7 +67,7 @@ export default function FoodOverview() {
             className="relative h-[550px] rounded-2xl overflow-hidden shadow-2xl"
           >
             <Image
-              src="/services/food-lab.png"
+              src="/services/food-lab.webp"
               alt="Food Testing Laboratory Equipment"
               fill
               className="object-cover"

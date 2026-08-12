@@ -17,7 +17,7 @@ const TESTIMONIALS = [
     testimonial:
       "Petrolabs has been an exceptional partner for our oil analysis and reliability programs. Their quick turnaround and accurate reports have significantly improved our maintenance decisions.",
     rating: 5,
-    image: "/testi-01.jpg",
+    image: "/testi-01.webp",
   },
   {
     name: "Anita Verma",
@@ -25,7 +25,7 @@ const TESTIMONIALS = [
     testimonial:
       "Their lubrication and reliability training programs provided our team with practical knowledge aligned to global standards. Highly recommended for upskilling technical staff.",
     rating: 5,
-    image: "/testi-03.jpg",
+    image: "/testi-03.webp",
   },
   {
     name: "Vikram Patel",
@@ -33,7 +33,7 @@ const TESTIMONIALS = [
     testimonial:
       "The onsite oil analysis solutions by Petrolabs have helped us reduce downtime and improve equipment health dramatically. Professional team and excellent support.",
     rating: 5,
-    image: "/testi-02.jpg",
+    image: "/testi-02.webp",
   },
 ];
 
@@ -170,8 +170,8 @@ const TestimonialSection = () => {
                       alt={currentTestimonial.name}
                       fill
                       className="object-cover"
-                      priority
-                      quality={100}
+                      loading="lazy"
+                      quality={75}
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
 

@@ -1,35 +1,79 @@
 // app/page.js
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ImageSlider from "./ImageSlider";
 import Link from "next/link";
+
+const ALL_SLIDE_IMAGES = [
+  "/slide-1-a.webp",
+  "/slide-1-b.webp",
+  "/slide-1-c.webp",
+  "/slide-2-a.webp",
+  "/slide-2-b.webp",
+  "/slide-2-c.webp",
+  "/slide-3-a.webp",
+  "/slide-3-b.webp",
+  "/slide-3-c.webp",
+];
 
 export default function Home() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [direction, setDirection] = useState("right");
+  const [autoplayReady, setAutoplayReady] = useState(false);
   const mainSliderTimerRef = useRef(null);
 
-  // Warm browser cache for all slider images so slide changes feel instant
+  // Start autoplay only after first paint so the browser loading spinner can finish
+  // (especially on slower Windows → VPS connections).
   useEffect(() => {
-    const urls = [
-      "/slide-1-a.webp",
-      "/slide-1-b.webp",
-      "/slide-1-c.webp",
-      "/slide-2-a.webp",
-      "/slide-2-b.webp",
-      "/slide-2-c.webp",
-      "/slide-3-a.webp",
-      "/slide-3-b.webp",
-      "/slide-3-c.webp",
-    ];
-    urls.forEach((src) => {
-      const img = new window.Image();
-      img.src = src;
-    });
+    let cancelled = false;
+
+    const enableAutoplay = () => {
+      if (!cancelled) setAutoplayReady(true);
+    };
+
+    if (document.readyState === "complete") {
+      // Defer slightly so pending subresources can settle
+      const t = setTimeout(enableAutoplay, 300);
+      return () => {
+        cancelled = true;
+        clearTimeout(t);
+      };
+    }
+
+    window.addEventListener("load", enableAutoplay, { once: true });
+    // Fallback if load is delayed by unrelated heavy assets below the fold
+    const fallback = setTimeout(enableAutoplay, 2500);
+
+    return () => {
+      cancelled = true;
+      window.removeEventListener("load", enableAutoplay);
+      clearTimeout(fallback);
+    };
   }, []);
+
+  // Warm remaining slides AFTER window load — never during initial page load
+  useEffect(() => {
+    if (!autoplayReady) return;
+
+    const warm = () => {
+      ALL_SLIDE_IMAGES.slice(3).forEach((src) => {
+        const img = new window.Image();
+        img.decoding = "async";
+        img.src = src;
+      });
+    };
+
+    if ("requestIdleCallback" in window) {
+      const id = window.requestIdleCallback(warm, { timeout: 2000 });
+      return () => window.cancelIdleCallback(id);
+    }
+
+    const t = setTimeout(warm, 500);
+    return () => clearTimeout(t);
+  }, [autoplayReady]);
 
   const slides = [
     {
@@ -169,38 +213,14 @@ export default function Home() {
   };
 
   // Handle when image slider completes a full cycle
-  const handleImageCycleComplete = () => {
-    // When all 3 images have been shown, advance to next main slide
+  const handleImageCycleComplete = useCallback(() => {
     setDirection("right");
     setActiveImageIndex(0);
     setCurrentSlideIndex((prev) => (prev + 1 === slides.length ? 0 : prev + 1));
-  };
+  }, [slides.length]);
 
   const currentSlide = slides[currentSlideIndex];
   const currentContent = currentSlide.content[activeImageIndex];
-
-  const slideVariants = {
-    enter: (direction) => ({
-      x: direction === "right" ? "100%" : "-100%",
-      opacity: 0,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    },
-    exit: (direction) => ({
-      x: direction === "right" ? "-50%" : "50%",
-      opacity: 0,
-      transition: {
-        duration: 0.4,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    }),
-  };
 
   const contentVariants = {
     enter: {
@@ -236,88 +256,75 @@ export default function Home() {
       <div className="relative flex items-center lg:items-start py-12">
         <div className="container mx-auto px-4 md:px-10 lg:px-16">
           <div className="relative">
-            <AnimatePresence mode="wait" custom={direction}>
-              <motion.div
-                key={currentSlideIndex}
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                className="w-full"
-              >
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
-                  {/* Content Section - Clean & Minimal */}
-                  <div className="flex-1 max-w-2xl order-2 lg:order-1">
-                    <AnimatePresence mode="wait">
-                      <motion.div
-                        key={activeImageIndex}
-                        variants={contentVariants}
-                        initial="enter"
-                        animate="center"
-                        exit="exit"
+            {/* Keep ImageSlider mounted (outside keyed exit/enter) so Windows
+                browsers don't keep the tab spinner spinning from remounted images */}
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
+              <div className="flex-1 max-w-2xl order-2 lg:order-1">
+                <AnimatePresence mode="wait" custom={direction}>
+                  <motion.div
+                    key={`${currentSlideIndex}-${activeImageIndex}`}
+                    custom={direction}
+                    variants={contentVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                  >
+                    <h1 className="text-4xl xl:text-5xl font-black leading-tight mb-6 text-gray-900">
+                      <span className="text-gray-900">
+                        {currentContent.title}
+                      </span>
+                      <br />
+                      <span className="text-primary">
+                        {currentContent.highlight}
+                      </span>
+                    </h1>
+
+                    <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-10">
+                      {currentContent.description}
+                    </p>
+
+                    <Link href={currentContent.buttonLink}>
+                      <motion.button
+                        whileHover={{ scale: 1.03 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-sm md:text-base transition-all duration-300 cursor-pointer overflow-hidden"
                       >
-                        {/* Heading */}
-                        <h1 className="text-4xl xl:text-5xl font-black leading-tight mb-6 text-gray-900">
-                          <span className="text-gray-900">
-                            {currentContent.title}
-                          </span>
-                          <br />
-                          <span className="text-primary">
-                            {currentContent.highlight}
-                          </span>
-                        </h1>
+                        <div className="absolute inset-0 bg-linear-to-r from-primary to-primary/85 transition-opacity duration-300 group-hover:opacity-0" />
+                        <div className="absolute inset-0 bg-linear-to-r from-accent1 via-accent2 to-accent2 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                        {/* Description */}
-                        <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-10">
-                          {currentContent.description}
-                        </p>
+                        <span className="relative z-10 text-white">
+                          {currentContent.buttonText}
+                        </span>
+                        <svg
+                          className="w-5 h-5 relative z-10 text-white transition-transform duration-300 group-hover:translate-x-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                      </motion.button>
+                    </Link>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
 
-                        {/* CTA Button */}
-                        <Link href={currentContent.buttonLink}>
-                          <motion.button
-                            whileHover={{ scale: 1.03 }}
-                            whileTap={{ scale: 0.98 }}
-                            className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-sm md:text-base transition-all duration-300 cursor-pointer overflow-hidden"
-                          >
-                            <div className="absolute inset-0 bg-linear-to-r from-primary to-primary/85 transition-opacity duration-300 group-hover:opacity-0" />
-                            <div className="absolute inset-0 bg-linear-to-r from-accent1 via-accent2 to-accent2 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-                            <span className="relative z-10 text-white">
-                              {currentContent.buttonText}
-                            </span>
-                            <svg
-                              className="w-5 h-5 relative z-10 text-white transition-transform duration-300 group-hover:translate-x-1"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M17 8l4 4m0 0l-4 4m4-4H3"
-                              />
-                            </svg>
-                          </motion.button>
-                        </Link>
-                      </motion.div>
-                    </AnimatePresence>
-                  </div>
-
-                  {/* Image Slider Section */}
-                  <div className="flex-1 w-full lg:w-auto order-1 lg:order-2">
-                    <ImageSlider
-                      images={currentSlide.images}
-                      onActiveChange={setActiveImageIndex}
-                      activeIndex={activeImageIndex}
-                      onCycleComplete={handleImageCycleComplete}
-                      priority={currentSlideIndex === 0}
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+              <div className="flex-1 w-full lg:w-auto order-1 lg:order-2">
+                <ImageSlider
+                  images={currentSlide.images}
+                  onActiveChange={setActiveImageIndex}
+                  activeIndex={activeImageIndex}
+                  onCycleComplete={handleImageCycleComplete}
+                  priority
+                  autoplay={autoplayReady}
+                />
+              </div>
+            </div>
           </div>
 
           {/* Navigation Controls */}

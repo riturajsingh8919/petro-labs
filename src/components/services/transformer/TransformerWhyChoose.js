@@ -55,7 +55,7 @@ export default function TransformerWhyChoose() {
             className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl order-1 lg:order-2"
           >
             <Image
-              src="/services/transformer-equipment.png"
+              src="/services/transformer-equipment.webp"
               alt="Advanced Testing Equipment"
               fill
               className="object-cover"

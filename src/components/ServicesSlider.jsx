@@ -31,63 +31,63 @@ const ServicesSlider = () => {
     {
       id: 1,
       title: "Petroleum Products & Lubricant Testing",
-      image: "/services/1.jpg",
+      image: "/services/1.webp",
       icon: MdOutlineOilBarrel,
       href: "/services/petroleum-lubricant-testing",
     },
     {
       id: 2,
       title: "Transformer Oil Testing",
-      image: "/services/2.jpg",
+      image: "/services/2.webp",
       icon: MdOutlineElectricalServices,
       href: "/services/transformer-oil-testing",
     },
     {
       id: 3,
       title: "Water Testing Services",
-      image: "/services/3.jpg",
+      image: "/services/3.webp",
       icon: FiDroplet,
       href: "/services/water-testing",
     },
     {
       id: 4,
       title: "Coolant and DEF Testing",
-      image: "/services/4.jpg",
+      image: "/services/4.webp",
       icon: MdOutlineScience,
       href: "/services/coolant-def-testing",
     },
     {
       id: 5,
       title: "RoHS and ELC Certification Testing",
-      image: "/services/5.jpg",
+      image: "/services/5.webp",
       icon: MdOutlineBiotech,
       href: "/services/rohs-elc-testing",
     },
     {
       id: 6,
       title: "Chemical, Mechanical Testing",
-      image: "/services/6.jpg",
+      image: "/services/6.webp",
       icon: MdOutlineFactory,
       href: "/services/chemical-mechanical-testing",
     },
     {
       id: 7,
       title: "Metallography Testing",
-      image: "/services/7.jpg",
+      image: "/services/7.webp",
       icon: MdOutlinePrecisionManufacturing,
       href: "/services/metallography-testing",
     },
     {
       id: 8,
       title: "Food and Agriculture Product Testing",
-      image: "/services/8.jpg",
+      image: "/services/8.webp",
       icon: MdOutlineRestaurant,
       href: "/services/food-agriculture-testing",
     },
     {
       id: 9,
       title: "Environmental Testing",
-      image: "/services/9.jpg",
+      image: "/services/9.webp",
       icon: MdOutlineEco,
       href: "/services/environmental-testing",
     },
@@ -248,8 +248,8 @@ const ServicesSlider = () => {
                           fill
                           className="object-cover"
                           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                          quality={100}
-                          priority={idx === 0}
+                          quality={75}
+                          loading="lazy"
                         />
                       </div>
 

@@ -29,7 +29,7 @@ export default function TrainingAcademyHero() {
   return (
     <LazyMotion features={loadFeatures} strict>
       <div className="h-20"></div>
-      <section className="relative bg-[url('/training/1.png')] bg-no-repeat bg-cover bg-center overflow-hidden">
+      <section className="relative bg-[url('/training/1.webp')] bg-no-repeat bg-cover bg-center overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-primary opacity-80"></div>
 

@@ -134,7 +134,7 @@ const TeamExpertise = () => {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/expert-team.png" // Team working in lab
+                  src="/expert-team.webp" // Team working in lab
                   alt="Expert Team"
                   width={600}
                   height={700}
@@ -224,7 +224,7 @@ const TeamExpertise = () => {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/modern-lab-equipment.png" // Modern lab equipment
+                  src="/modern-lab-equipment.webp" // Modern lab equipment
                   alt="Laboratory Infrastructure"
                   width={600}
                   height={804}

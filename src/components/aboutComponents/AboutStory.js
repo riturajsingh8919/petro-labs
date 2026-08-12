@@ -95,12 +95,12 @@ const AboutStory = () => {
               </div>
               <div className="relative flex items-center justify-center lg:justify-end">
                 <Image
-                  src="/about-story1.png"
+                  src="/about-story1.webp"
                   alt="Laboratory Equipment"
                   width={668}
                   height={938}
                   className="w-auto h-full object-cover"
-                  quality={100}
+                  quality={75}
                 />
               </div>
             </div>

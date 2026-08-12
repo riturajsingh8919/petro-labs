@@ -12,7 +12,7 @@ export default function PetroleumHero() {
       <div className="relative overflow-hidden">
         <div className="relative h-[350px] md:h-[450px]">
           <Image
-            src="/services/petroleum-hero.png"
+            src="/services/petroleum-hero.webp"
             alt="Petroleum Testing Laboratory"
             fill
             className="object-cover"
