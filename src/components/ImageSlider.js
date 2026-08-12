@@ -90,7 +90,6 @@ const ImageSlider = memo(
                   loading={priority && index < 3 ? "eager" : "lazy"}
                   sizes="(max-width: 768px) 90vw, (max-width: 1200px) 40vw, 28vw"
                   quality={80}
-                  unoptimized
                 />
 
                 {isActive && (

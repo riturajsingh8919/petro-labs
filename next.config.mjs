@@ -1,12 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Assets are already compressed WebP — skip runtime sharp work on the VPS
   images: {
-    unoptimized: true,
+    // Serve modern formats via next/image optimizer
+    formats: ["image/avif", "image/webp"],
     qualities: [75, 80, 100],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
   },
   reactCompiler: true,
-  // Faster production responses behind Docker / reverse proxy
   poweredByHeader: false,
   compress: true,
 };

@@ -54,7 +54,7 @@ export default function Home() {
     };
   }, []);
 
-  // Warm remaining slides AFTER window load — never during initial page load
+  // Warm next/image optimizer cache for upcoming slides (matches Image sizes)
   useEffect(() => {
     if (!autoplayReady) return;
 
@@ -62,7 +62,7 @@ export default function Home() {
       ALL_SLIDE_IMAGES.slice(3).forEach((src) => {
         const img = new window.Image();
         img.decoding = "async";
-        img.src = src;
+        img.src = `/_next/image?url=${encodeURIComponent(src)}&w=640&q=80`;
       });
     };
 

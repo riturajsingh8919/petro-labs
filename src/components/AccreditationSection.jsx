@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { HiOutlineDownload, HiOutlineDocumentSearch } from "react-icons/hi";
 
 const AccreditationSection = () => {
@@ -94,12 +95,14 @@ const AccreditationSection = () => {
               >
                 <div>
                   <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 mb-8">
-                    <div className="w-32 h-32 shrink-0 bg-white rounded-2xl shadow-sm border border-gray-100 flex items-center justify-center p-4">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                    <div className="relative w-32 h-32 shrink-0 bg-white rounded-2xl shadow-sm border border-gray-100 p-4">
+                      <Image
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-full object-contain"
+                        fill
+                        className="object-contain p-4"
+                        sizes="128px"
+                        quality={80}
                       />
                     </div>
                     <div className="text-center sm:text-left">

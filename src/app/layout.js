@@ -89,10 +89,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${outfit.variable} ${inter.variable}`}>
-      <head>
-        <link rel="preload" as="image" href="/slide-1-a.webp" type="image/webp" />
-        <link rel="preload" as="image" href="/logo-new.webp" type="image/webp" />
-      </head>
       <body>
         <Header />
         {children}

@@ -7,6 +7,7 @@ import {
   HiShieldCheck,
   HiBriefcase,
 } from "react-icons/hi2";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import EnrollModal from "../training/EnrollModal";
@@ -29,9 +30,17 @@ export default function TrainingAcademyHero() {
   return (
     <LazyMotion features={loadFeatures} strict>
       <div className="h-20"></div>
-      <section className="relative bg-[url('/training/1.webp')] bg-no-repeat bg-cover bg-center overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-primary opacity-80"></div>
+      <section className="relative overflow-hidden">
+        <Image
+          src="/training/1.webp"
+          alt="Petrolabs Training Academy laboratory"
+          fill
+          priority
+          quality={80}
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-primary/80" />
 
         <div className="relative z-10 container mx-auto px-6 md:px-10 py-16">
           <m.div
@@ -116,14 +125,14 @@ export default function TrainingAcademyHero() {
         </div>
       </section>
 
-      <EnrollModal 
-        isOpen={isEnrollOpen} 
-        onClose={() => setIsEnrollOpen(false)} 
+      <EnrollModal
+        isOpen={isEnrollOpen}
+        onClose={() => setIsEnrollOpen(false)}
       />
-      
-      <SyllabusModal 
-        isOpen={isSyllabusOpen} 
-        onClose={() => setIsSyllabusOpen(false)} 
+
+      <SyllabusModal
+        isOpen={isSyllabusOpen}
+        onClose={() => setIsSyllabusOpen(false)}
       />
     </LazyMotion>
   );
