@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const ImageSlider = memo(
-  ({ images, onActiveChange, activeIndex, onCycleComplete }) => {
+  ({ images, onActiveChange, activeIndex, onCycleComplete, priority = false }) => {
     const [localActiveIndex, setLocalActiveIndex] = useState(activeIndex);
     const timerRef = useRef(null);
 
@@ -53,7 +53,7 @@ const ImageSlider = memo(
 
             return (
               <motion.div
-                key={index}
+                key={image.src}
                 onClick={() => handleImageClick(index)}
                 className={`relative cursor-pointer rounded-2xl overflow-hidden ${
                   isActive ? "flex-3" : "flex-1"
@@ -77,9 +77,12 @@ const ImageSlider = memo(
                   alt={image.alt}
                   fill
                   className="object-cover"
-                  priority={index === 0}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  quality={100}
+                  priority={priority}
+                  loading={priority ? "eager" : "lazy"}
+                  sizes="(max-width: 768px) 90vw, (max-width: 1200px) 40vw, 28vw"
+                  quality={80}
+                  // Already compressed WebP — skip runtime /_next/image work on VPS
+                  unoptimized
                 />
 
                 {/* Active Border */}

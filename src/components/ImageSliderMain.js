@@ -12,13 +12,32 @@ export default function Home() {
   const [direction, setDirection] = useState("right");
   const mainSliderTimerRef = useRef(null);
 
+  // Warm browser cache for all slider images so slide changes feel instant
+  useEffect(() => {
+    const urls = [
+      "/slide-1-a.webp",
+      "/slide-1-b.webp",
+      "/slide-1-c.webp",
+      "/slide-2-a.webp",
+      "/slide-2-b.webp",
+      "/slide-2-c.webp",
+      "/slide-3-a.webp",
+      "/slide-3-b.webp",
+      "/slide-3-c.webp",
+    ];
+    urls.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, []);
+
   const slides = [
     {
       id: 1,
       images: [
-        { src: "/slide-1-a.png", alt: "Laboratory testing" },
-        { src: "/slide-1-b.png", alt: "Quality analysis" },
-        { src: "/slide-1-c.png", alt: "Professional equipment" },
+        { src: "/slide-1-a.webp", alt: "Laboratory testing" },
+        { src: "/slide-1-b.webp", alt: "Quality analysis" },
+        { src: "/slide-1-c.webp", alt: "Professional equipment" },
       ],
       content: [
         {
@@ -50,9 +69,9 @@ export default function Home() {
     {
       id: 2,
       images: [
-        { src: "/slide-2-a.png", alt: "Certification process" },
-        { src: "/slide-2-b.png", alt: "Testing facility" },
-        { src: "/slide-2-c.png", alt: "Quality control" },
+        { src: "/slide-2-a.webp", alt: "Certification process" },
+        { src: "/slide-2-b.webp", alt: "Testing facility" },
+        { src: "/slide-2-c.webp", alt: "Quality control" },
       ],
       content: [
         {
@@ -84,9 +103,9 @@ export default function Home() {
     {
       id: 3,
       images: [
-        { src: "/slide-3-a.png", alt: "Environmental testing" },
-        { src: "/slide-3-b.png", alt: "Food analysis" },
-        { src: "/slide-3-c.png", alt: "Metallography lab" },
+        { src: "/slide-3-a.webp", alt: "Environmental testing" },
+        { src: "/slide-3-b.webp", alt: "Food analysis" },
+        { src: "/slide-3-c.webp", alt: "Metallography lab" },
       ],
       content: [
         {
@@ -293,6 +312,7 @@ export default function Home() {
                       onActiveChange={setActiveImageIndex}
                       activeIndex={activeImageIndex}
                       onCycleComplete={handleImageCycleComplete}
+                      priority={currentSlideIndex === 0}
                     />
                   </div>
                 </div>
