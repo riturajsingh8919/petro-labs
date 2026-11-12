@@ -12,26 +12,12 @@ export default function ContactFormSection() {
     name: "",
     email: "",
     phone: "",
-    company: "",
-    service: "",
     message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
-  const services = [
-    "Petroleum Testing",
-    "Water Quality Testing",
-    "Coolant & DEF Testing",
-    "RoHS & ELV Certification",
-    "Chemical & Mechanical Testing",
-    "Metallography Testing",
-    "Food Testing",
-    "Air Quality Testing",
-    "Other",
-  ];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,8 +37,6 @@ export default function ContactFormSection() {
           name: "",
           email: "",
           phone: "",
-          company: "",
-          service: "",
           message: "",
         });
         setTimeout(() => setSubmitted(false), 5000);
@@ -102,7 +86,7 @@ export default function ContactFormSection() {
             onSubmit={handleSubmit}
             className="bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-100"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
               <div>
                 <label
                   htmlFor="name"
@@ -140,15 +124,13 @@ export default function ContactFormSection() {
                   placeholder="john@example.com"
                 />
               </div>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label
                   htmlFor="phone"
                   className="block text-gray-900 font-bold mb-2"
                 >
-                  Phone Number *
+                  Mobile Number *
                 </label>
                 <input
                   type="tel"
@@ -161,48 +143,6 @@ export default function ContactFormSection() {
                   placeholder="+91 XXXXX XXXXX"
                 />
               </div>
-
-              <div>
-                <label
-                  htmlFor="company"
-                  className="block text-gray-900 font-bold mb-2"
-                >
-                  Company Name
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors"
-                  placeholder="Your Company"
-                />
-              </div>
-            </div>
-
-            <div className="mb-6">
-              <label
-                htmlFor="service"
-                className="block text-gray-900 font-bold mb-2"
-              >
-                Service of Interest *
-              </label>
-              <select
-                id="service"
-                name="service"
-                required
-                value={formData.service}
-                onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors"
-              >
-                <option value="">Select a service</option>
-                {services.map((service) => (
-                  <option key={service} value={service}>
-                    {service}
-                  </option>
-                ))}
-              </select>
             </div>
 
             <div className="mb-6">
@@ -210,12 +150,11 @@ export default function ContactFormSection() {
                 htmlFor="message"
                 className="block text-gray-900 font-bold mb-2"
               >
-                Message *
+                Message
               </label>
               <textarea
                 id="message"
                 name="message"
-                required
                 value={formData.message}
                 onChange={handleChange}
                 rows={5}

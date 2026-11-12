@@ -5,9 +5,9 @@ import Link from "next/link";
 import { HiEnvelope, HiPhone, HiMapPin } from "react-icons/hi2";
 import {
   FaFacebookF,
-  FaTwitter,
   FaLinkedinIn,
   FaInstagram,
+  FaYoutube,
 } from "react-icons/fa";
 
 const loadFeatures = () =>
@@ -56,27 +56,27 @@ const Footer = () => {
     {
       name: "Facebook",
       icon: FaFacebookF,
-      href: "https://www.facebook.com/PetroLabs-102969335594626",
+      href: "https://www.facebook.com/petrolabs/",
       color: "hover:bg-[#1877F2]",
-    },
-    {
-      name: "Twitter",
-      icon: FaTwitter,
-      href: "https://twitter.com/PetroLabsIndia",
-      color: "hover:bg-[#1DA1F2]",
-    },
-    {
-      name: "LinkedIn",
-      icon: FaLinkedinIn,
-      href: "https://www.linkedin.com/company/petrolabs-india-private-ltd",
-      color: "hover:bg-[#0A66C2]",
     },
     {
       name: "Instagram",
       icon: FaInstagram,
-      href: "#",
+      href: "https://www.instagram.com/petrolabs_india/",
       color:
         "hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCB045]",
+    },
+    {
+      name: "LinkedIn",
+      icon: FaLinkedinIn,
+      href: "https://www.linkedin.com/company/petrolabs-india-private-ltd/home/",
+      color: "hover:bg-[#0A66C2]",
+    },
+    {
+      name: "YouTube",
+      icon: FaYoutube,
+      href: "https://www.youtube.com/@Petrolabs-labs/videos",
+      color: "hover:bg-[#FF0000]",
     },
   ];
 

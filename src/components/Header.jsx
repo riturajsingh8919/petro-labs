@@ -7,6 +7,12 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { HiX, HiChevronDown } from "react-icons/hi";
 import { RiMenu3Fill } from "react-icons/ri";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+} from "react-icons/fa";
 
 const loadFeatures = () =>
   import("framer-motion").then((res) => res.domAnimation);
@@ -143,6 +149,34 @@ const menuData = [
   },
   { title: "Blogs", href: "/blogs" },
   { title: "Careers", href: "/careers" },
+];
+
+const headerSocialLinks = [
+  {
+    name: "Facebook",
+    icon: FaFacebookF,
+    href: "https://www.facebook.com/petrolabs/",
+    hoverBg: "hover:bg-[#1877F2]",
+  },
+  {
+    name: "Instagram",
+    icon: FaInstagram,
+    href: "https://www.instagram.com/petrolabs_india/",
+    hoverBg:
+      "hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCB045]",
+  },
+  {
+    name: "LinkedIn",
+    icon: FaLinkedinIn,
+    href: "https://www.linkedin.com/company/petrolabs-india-private-ltd/home/",
+    hoverBg: "hover:bg-[#0A66C2]",
+  },
+  {
+    name: "YouTube",
+    icon: FaYoutube,
+    href: "https://www.youtube.com/@Petrolabs-labs/videos",
+    hoverBg: "hover:bg-[#FF0000]",
+  },
 ];
 
 export default function Header() {
@@ -638,6 +672,32 @@ export default function Header() {
                     )}
                   </motion.div>
                 ))}
+
+                {/* Social Media Links */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8, duration: 0.5 }}
+                  className="pt-8 mt-6 border-t border-white/10"
+                >
+                  <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-4">
+                    Follow Us
+                  </p>
+                  <div className="flex items-center gap-3">
+                    {headerSocialLinks.map((social, index) => (
+                      <a
+                        key={index}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`w-11 h-11 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white transition-all duration-300 cursor-pointer ${social.hoverBg}`}
+                        aria-label={social.name}
+                      >
+                        <social.icon className="w-5 h-5" />
+                      </a>
+                    ))}
+                  </div>
+                </motion.div>
               </motion.div>
             </div>
           </motion.div>

@@ -4,10 +4,10 @@ import nodemailer from "nodemailer";
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { name, email, phone, company, service, message } = body;
+    const { name, email, phone, message } = body;
 
     // Validate input
-    if (!name || !email || !phone || !service || !message) {
+    if (!name || !email || !phone) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 },
@@ -33,7 +33,7 @@ export async function POST(req) {
     const adminMailOptions = {
       from: `"PetroLabs Website" <${process.env.EMAIL_USER}>`,
       to: adminEmail,
-      subject: `New Lead: ${service} Inquiry from ${name}`,
+      subject: `New Lead Inquiry from ${name}`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -64,22 +64,14 @@ export async function POST(req) {
                   <td style="padding: 12px 0; color: #1a202c; border-bottom: 1px solid #e2e8f0;"><a href="mailto:${email}" style="color:${brandColor}; text-decoration: none;">${email}</a></td>
                 </tr>
                 <tr>
-                  <th style="padding: 12px 0; color: #4a5568; font-weight: 600; border-bottom: 1px solid #e2e8f0;">Phone Number</th>
+                  <th style="padding: 12px 0; color: #4a5568; font-weight: 600; border-bottom: 1px solid #e2e8f0;">Mobile Number</th>
                   <td style="padding: 12px 0; color: #1a202c; border-bottom: 1px solid #e2e8f0;">${phone}</td>
-                </tr>
-                <tr>
-                  <th style="padding: 12px 0; color: #4a5568; font-weight: 600; border-bottom: 1px solid #e2e8f0;">Company</th>
-                  <td style="padding: 12px 0; color: #1a202c; border-bottom: 1px solid #e2e8f0;">${company || "N/A"}</td>
-                </tr>
-                <tr>
-                  <th style="padding: 12px 0; color: #4a5568; font-weight: 600; border-bottom: 1px solid #e2e8f0;">Service of Interest</th>
-                  <td style="padding: 12px 0; color: #1a202c; border-bottom: 1px solid #e2e8f0;"><strong>${service}</strong></td>
                 </tr>
               </table>
               
               <div style="background: #f8fafc; border-left: 4px solid ${accentColor}; padding: 15px 20px; margin-top: 25px; border-radius: 4px; font-size: 16px; color: #1a202c; line-height: 1.5;">
                 <strong style="color: #4a5568;">Message:</strong><br><br>
-                ${message.replace(/\n/g, "<br>")}
+                ${message ? message.replace(/\n/g, "<br>") : "<em>No message provided</em>"}
               </div>
             </div>
             
@@ -119,7 +111,7 @@ export async function POST(req) {
                 Hi ${name},
               </div>
               <p style="margin: 0 0 15px 0;">Thank you for reaching out to <strong>PetroLabs India</strong>.</p>
-              <p style="margin: 0 0 15px 0;">We have successfully received your inquiry regarding <strong style="color: ${brandColor};">${service}</strong>. Our team of experts is currently reviewing your request and will get back to you within 24 hours to discuss how we can assist you.</p>
+              <p style="margin: 0 0 15px 0;">We have successfully received your inquiry. Our team of experts is currently reviewing your request and will get back to you within 24 hours to discuss how we can assist you.</p>
               <p style="margin: 0 0 15px 0;">If your request is urgent, please feel free to call us directly at <strong style="color: ${accentColor};">040-23156400</strong>.</p>
               
               <div style="text-align: center; margin-top: 35px; margin-bottom: 35px;">
@@ -132,10 +124,10 @@ export async function POST(req) {
             <!-- Footer -->
             <div style="background-color: #f8fafc; padding: 25px; text-align: center; color: #a0aec0; font-size: 14px; border-top: 1px solid #edf2f7;">
               PetroLabs India Pvt. Ltd.<br>
-              Plot No 84, FIE, Patparganj Industrial Area, Delhi<br>
+              Building No.: 5, Durga Shakthi Peetam Colony, Kukatpally, Hyderabad, Telangana 500072<br>
               <div style="margin-top: 15px;">
                 <a href="https://petrolabsindia.com" style="color: ${brandColor}; text-decoration: none; margin: 0 10px;">Website</a> | 
-                <a href="mailto:info@petrolabsindia.com" style="color: ${brandColor}; text-decoration: none; margin: 0 10px;">Contact Us</a>
+                <a href="mailto:sales@petrolabsindia.com" style="color: ${brandColor}; text-decoration: none; margin: 0 10px;">Contact Us</a>
               </div>
             </div>
             

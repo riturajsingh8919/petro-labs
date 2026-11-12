@@ -2,6 +2,12 @@
 
 import { LazyMotion, m } from "framer-motion";
 import { HiPhone, HiEnvelope, HiMapPin } from "react-icons/hi2";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+} from "react-icons/fa";
 
 const loadFeatures = () =>
   import("framer-motion").then((res) => res.domAnimation);
@@ -71,6 +77,38 @@ export default function ContactInfo() {
     },
   };
 
+  const socialChannels = [
+    {
+      name: "Facebook",
+      icon: FaFacebookF,
+      href: "https://www.facebook.com/petrolabs/",
+      color: "hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2]",
+      text: "Facebook",
+    },
+    {
+      name: "Instagram",
+      icon: FaInstagram,
+      href: "https://www.instagram.com/petrolabs_india/",
+      color:
+        "hover:bg-gradient-to-r hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCB045] hover:text-white hover:border-transparent",
+      text: "Instagram",
+    },
+    {
+      name: "LinkedIn",
+      icon: FaLinkedinIn,
+      href: "https://www.linkedin.com/company/petrolabs-india-private-ltd/home/",
+      color: "hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2]",
+      text: "LinkedIn",
+    },
+    {
+      name: "YouTube",
+      icon: FaYoutube,
+      href: "https://www.youtube.com/@Petrolabs-labs/videos",
+      color: "hover:bg-[#FF0000] hover:text-white hover:border-[#FF0000]",
+      text: "YouTube",
+    },
+  ];
+
   return (
     <LazyMotion features={loadFeatures} strict>
       <section className="container mx-auto px-8 md:px-12 py-16">
@@ -119,6 +157,39 @@ export default function ContactInfo() {
             );
           })}
         </div>
+
+        {/* Social Links Banner */}
+        <m.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="mt-8 bg-white rounded-2xl p-6 md:p-8 shadow-lg border-2 border-gray-100 flex flex-col md:flex-row items-center justify-between gap-6"
+        >
+          <div>
+            <h3 className="text-xl font-black text-gray-900 mb-1">
+              Connect With Us
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Follow PetroLabs on social media for industry updates, testing insights, and technical guides.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-3">
+            {socialChannels.map((social, index) => (
+              <a
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-gray-50 border-2 border-gray-200 text-gray-800 font-bold text-sm transition-all duration-300 cursor-pointer shadow-xs ${social.color}`}
+                aria-label={social.name}
+              >
+                <social.icon className="w-4 h-4" />
+                <span>{social.text}</span>
+              </a>
+            ))}
+          </div>
+        </m.div>
       </section>
     </LazyMotion>
   );
